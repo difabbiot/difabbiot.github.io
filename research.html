@@ -3,312 +3,296 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Research &amp; Publications | Tony Di Fabbio</title>
-  <meta name="description" content="Publications and research by Tony Di Fabbio — aeroacoustics, CFD, turbulence modelling, acoustic liners, UHBR engines.">
+  <title>Research — Tony Di Fabbio</title>
+  <meta name="description" content="Publications, awards and funding by Tony Di Fabbio — aeroacoustics, computational fluid dynamics, turbulence modelling.">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .pub-doi {
+      font-size: .78rem;
+      margin-top: .3rem;
+    }
+    .pub-doi a {
+      color: var(--blue);
+      text-decoration: none;
+      font-family: monospace;
+      font-size: .75rem;
+    }
+    .pub-doi a:hover { text-decoration: underline; }
+
+    /* Awards table-style list */
+    .award-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .85rem;
+      margin-top: .75rem;
+    }
+    .award-table th {
+      text-align: left;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: var(--subtle);
+      padding: .4rem .6rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .award-table td {
+      padding: .6rem .6rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      color: #374151;
+      line-height: 1.45;
+    }
+    .award-table tr:last-child td { border-bottom: none; }
+    .award-table td:first-child { font-weight: 600; color: var(--navy); white-space: nowrap; }
+    .award-table td:last-child { color: var(--muted); font-size: .8rem; }
+    .award-amount {
+      font-size: .78rem;
+      font-weight: 700;
+      color: #166534;
+      background: #dcfce7;
+      border-radius: 100px;
+      padding: .1rem .5rem;
+      white-space: nowrap;
+    }
+  </style>
 </head>
 <body>
 
 <div class="eu-banner">
-  This project has received funding from the European Union's Horizon Europe research and innovation programme under the Marie Skłodowska-Curie Actions Grant Agreement No. <strong>101206371</strong>.
+  Funded by the EU Horizon Europe programme — Marie Skłodowska-Curie Actions, Grant Agreement No. <strong>101206371</strong>.
 </div>
 
 <nav>
   <div class="nav-inner">
-    <a class="nav-logo" href="index.html">Tony Di Fabbio &nbsp;<span>·</span>&nbsp; LINERFUN</a>
+    <a class="nav-logo" href="index.html">
+      <img src="img/logo.svg" alt="LINERFUN">
+      LINERFUN
+    </a>
     <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">Home</a></li>
       <li><a href="project.html">Project</a></li>
+      <li><a href="about.html">Bio</a></li>
       <li><a href="research.html">Research</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="news.html">News</a></li>
+      <li><a href="blog.html">Blog</a></li>
     </ul>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
-      </svg>
-    </button>
   </div>
 </nav>
 
-<header class="page-header">
-  <div class="container">
-    <div class="section-label">Research</div>
-    <h1>Publications &amp; Research</h1>
-    <p>Peer-reviewed journals, conference proceedings, and research areas</p>
-  </div>
-</header>
+<div class="col">
 
-<!-- Research Areas -->
-<section>
-  <div class="container">
-    <div class="section-label">Overview</div>
-    <h2>Research Areas</h2>
-    <div class="research-grid">
-      <div class="research-card">
-        <h4>Aeroacoustics &amp; Acoustic Liners</h4>
-        <p>Time-domain impedance boundary conditions, duct acoustics, liner optimisation for UHBR nacelles. Current focus of the LINERFUN project.</p>
-      </div>
-      <div class="research-card">
-        <h4>Scale-Resolving CFD/CAA</h4>
-        <p>LES, SAS, and hybrid RANS/LES for high-fidelity aeroacoustic simulations. HPC deployment on CINECA LEONARDO, NCI Australia, POLITO LEGION.</p>
-      </div>
-      <div class="research-card">
-        <h4>Delta-Wing Vortical Flows</h4>
-        <p>Vortex formation, breakdown, shock–vortex interactions. RANS failure analysis and corrections for high-agility military aircraft configurations.</p>
-      </div>
-      <div class="research-card">
-        <h4>Physics-Informed ML &amp; GEP</h4>
-        <p>Gene Expression Programming for turbulence model augmentation. Solver-in-the-loop training for deployable, interpretable closures.</p>
-      </div>
-      <div class="research-card">
-        <h4>High-Speed Compressible Flows</h4>
-        <p>Supersonic/hypersonic aerodynamics, cavity flows with dynamic doors, digital twin frameworks for aerospace systems.</p>
-      </div>
-      <div class="research-card">
-        <h4>Rocket Propulsion CFD</h4>
-        <p>High-fidelity simulation of LOX/CH₄ sub-scale rocket combustors. Combustion stability and thermal analysis for propulsion system design.</p>
-      </div>
+  <header class="page-hero">
+    <h1>Research</h1>
+    <p>Publications, awards &amp; funding</p>
+  </header>
+
+  <!-- ── JOURNAL ARTICLES ── -->
+  <div class="section">
+    <div class="section-title">Journal Articles</div>
+
+    <div class="pub">
+      <div class="pub-title">Enhancing one-equation turbulence model for delta wing flows by gene expression programming</div>
+      <div class="pub-authors">D. Kotlzowski, <strong>T. Di Fabbio</strong>, E. Tangermann, M. Klein, Y. Fang, R. D. Sandberg</div>
+      <div class="pub-venue">AIAA Journal, 2026</div>
     </div>
+
+    <div class="pub">
+      <div class="pub-title">Strategies for Enhancing One-Equation Turbulence Model Predictions Using Gene-Expression Programming</div>
+      <div class="pub-authors"><strong>T. Di Fabbio</strong>, E. Tangermann, M. Klein, Y. Fang, R. D. Sandberg</div>
+      <div class="pub-venue">Fluids, 2024, 9(8)</div>
+      <div class="pub-doi"><a href="https://doi.org/10.3390/fluids9080191" target="_blank" rel="noopener">doi: 10.3390/fluids9080191</a></div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">Physical aspects of vortex–shock dynamics in delta wing configurations</div>
+      <div class="pub-authors">K. Rajkumar, <strong>T. Di Fabbio</strong>, E. Tangermann, M. Klein</div>
+      <div class="pub-venue">Physics of Fluids, 2024</div>
+      <div class="pub-doi"><a href="https://doi.org/10.1063/5.0213122" target="_blank" rel="noopener">doi: 10.1063/5.0213122</a></div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">Towards the understanding of vortex breakdown for improved RANS turbulence modelling</div>
+      <div class="pub-authors"><strong>T. Di Fabbio</strong>, K. Rajkumar, E. Tangermann, M. Klein</div>
+      <div class="pub-venue">Aerospace Science and Technology, 2024</div>
+      <div class="pub-doi"><a href="https://doi.org/10.1016/j.ast.2024.108973" target="_blank" rel="noopener">doi: 10.1016/j.ast.2024.108973</a></div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">Analysis of the vortex-dominated flow field over a delta wing at transonic speed</div>
+      <div class="pub-authors"><strong>T. Di Fabbio</strong>, E. Tangermann, M. Klein</div>
+      <div class="pub-venue">The Aeronautical Journal, 2023</div>
+      <div class="pub-doi"><a href="https://doi.org/10.1017/aer.2023.30" target="_blank" rel="noopener">doi: 10.1017/aer.2023.30</a></div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">Investigation of transonic aerodynamics on a triple-delta wing in sideslip conditions</div>
+      <div class="pub-authors"><strong>T. Di Fabbio</strong>, E. Tangermann, M. Klein</div>
+      <div class="pub-venue">CEAS Aeronautical Journal, 2022</div>
+      <div class="pub-doi"><a href="https://doi.org/10.1007/s13272-022-00571-9" target="_blank" rel="noopener">doi: 10.1007/s13272-022-00571-9</a></div>
+    </div>
+
   </div>
-</section>
 
-<!-- Journal Articles -->
-<section>
-  <div class="container">
-    <div class="section-label">Peer-Reviewed</div>
-    <h2>Journal Articles</h2>
-    <ul class="pub-list">
+  <!-- ── CONFERENCE PROCEEDINGS ── -->
+  <div class="section">
+    <div class="section-title">Conference Proceedings</div>
 
-      <li class="pub-item">
-        <div class="pub-authors">
-          D. Kotlzowski, <strong>T. Di Fabbio</strong>, E. Tangermann, M. Klein, Y. Fang, R. D. Sandberg
-        </div>
-        <div class="pub-title">
-          Enhancing one-equation turbulence model for delta wing flows by gene expression programming
-        </div>
-        <div class="pub-venue"><em>AIAA Journal</em>, 2026</div>
-        <p style="font-size:0.83rem; color:#4b5563; margin-top:0.4rem; margin-bottom:0;">
-          Designed symbolic GEP corrections introducing nonlinear stress–strain terms and a revised
-          turbulence production term; trained on a single delta wing and validated on double and triple
-          delta configurations, enabling an interpretable and robust modelling workflow.
-        </p>
-        <div class="pub-links">
-          <span class="badge badge-blue" style="font-size:0.73rem;">AIAA Journal · 2026</span>
-        </div>
-      </li>
+    <div class="pub">
+      <div class="pub-title">GPU-Accelerated Large-Eddy Simulations of High-Speed Cavity Flows With Dynamic Doors Deployment</div>
+      <div class="pub-authors">G. A. Bres, C. B. Ivey, L. Heidt, K. Wang, S. T. Bose, R. Hottois, J. Guerrero, <strong>T. Di Fabbio</strong></div>
+      <div class="pub-venue">32nd AIAA/CEAS Aeroacoustics Conference, 2026</div>
+    </div>
 
-      <li class="pub-item">
-        <div class="pub-authors">
-          <strong>T. Di Fabbio</strong>, E. Tangermann, M. Klein, Y. Fang, R. D. Sandberg
-        </div>
-        <div class="pub-title">
-          Strategies for Enhancing One-Equation Turbulence Model Predictions Using Gene-Expression Programming
-        </div>
-        <div class="pub-venue"><em>Fluids</em>, 2024, 9(8)</div>
-        <p style="font-size:0.83rem; color:#4b5563; margin-top:0.4rem; margin-bottom:0;">
-          Developed two GEP pathways extending the Boussinesq assumption and constructing a new
-          one-equation closure using solver-in-the-loop training for deployable wall-bounded turbulence models.
-        </p>
-        <div class="pub-links">
-          <span class="badge badge-blue" style="font-size:0.73rem;">Fluids · 2024</span>
-        </div>
-      </li>
+    <div class="pub">
+      <div class="pub-title">Towards a generalized open-source turbulence model for external aerodynamics</div>
+      <div class="pub-authors">E. Segalerba, <strong>T. Di Fabbio</strong>, V. Rossano, J. Guerrero</div>
+      <div class="pub-venue">20th OpenFOAM Workshop, Vienna, 2025</div>
+    </div>
 
-      <li class="pub-item">
-        <div class="pub-authors">
-          K. Rajkumar, <strong>T. Di Fabbio</strong>, E. Tangermann, M. Klein
-        </div>
-        <div class="pub-title">
-          Physical aspects of vortex–shock dynamics in delta wing configurations
-        </div>
-        <div class="pub-venue"><em>Physics of Fluids</em>, 2024</div>
-        <p style="font-size:0.83rem; color:#4b5563; margin-top:0.4rem; margin-bottom:0;">
-          Quantified shock–vortex interaction mechanisms across double and triple delta planforms
-          through CFD and enstrophy transport analysis, identifying geometry- and incidence-driven buffet sensitivity.
-        </p>
-        <div class="pub-links">
-          <span class="badge badge-blue" style="font-size:0.73rem;">Physics of Fluids · 2024</span>
-        </div>
-      </li>
+    <div class="pub">
+      <div class="pub-title">Verification and Validation of OpenFOAM for High-Speed Aerodynamics</div>
+      <div class="pub-authors">V. Rossano, <strong>T. Di Fabbio</strong>, E. Segalerba, J. Guerrero</div>
+      <div class="pub-venue">20th OpenFOAM Workshop, Vienna, 2025</div>
+    </div>
 
-      <li class="pub-item">
-        <div class="pub-authors">
-          <strong>T. Di Fabbio</strong>, K. Rajkumar, E. Tangermann, M. Klein
-        </div>
-        <div class="pub-title">
-          Towards the understanding of vortex breakdown for improved RANS turbulence modelling
-        </div>
-        <div class="pub-venue"><em>Aerospace Science and Technology</em>, 2024</div>
-        <p style="font-size:0.83rem; color:#4b5563; margin-top:0.4rem; margin-bottom:0;">
-          Diagnosed physical and modelling causes of one-equation RANS failures in transonic sideslip
-          and proposed a validated modification improving stability and accuracy.
-        </p>
-        <div class="pub-links">
-          <span class="badge badge-blue" style="font-size:0.73rem;">Aerospace Science and Technology · 2024</span>
-        </div>
-      </li>
+    <div class="pub">
+      <div class="pub-title">Optimization of Hypersonic Re-Entry Vehicle Aerodynamics for Communication Blackout Mitigation</div>
+      <div class="pub-authors">G. Zampa, <strong>T. Di Fabbio</strong>, E. Segalerba, J. Guerrero</div>
+      <div class="pub-venue">European Microwave Week, Utrecht, 2025</div>
+    </div>
 
-      <li class="pub-item">
-        <div class="pub-authors">
-          <strong>T. Di Fabbio</strong>, E. Tangermann, M. Klein
-        </div>
-        <div class="pub-title">
-          Analysis of the vortex-dominated flow field over a delta wing at transonic speed
-        </div>
-        <div class="pub-venue"><em>The Aeronautical Journal</em>, 2023</div>
-        <p style="font-size:0.83rem; color:#4b5563; margin-top:0.4rem; margin-bottom:0;">
-          Produced high-fidelity datasets resolving vortex systems and shocks; analysed eddy viscosity
-          and Reynolds stresses in vortex formation and maintenance.
-        </p>
-        <div class="pub-links">
-          <span class="badge badge-blue" style="font-size:0.73rem;">The Aeronautical Journal · 2023</span>
-        </div>
-      </li>
+    <div class="pub">
+      <div class="pub-title">Towards a machine learning-augmented one-equation turbulence model for external aerodynamics in an open-source framework</div>
+      <div class="pub-authors"><strong>T. Di Fabbio</strong>, E. Segalerba, E. Tangermann, M. Klein</div>
+      <div class="pub-venue">DGLR Conference, Augsburg, 2025</div>
+    </div>
 
-      <li class="pub-item">
-        <div class="pub-authors">
-          <strong>T. Di Fabbio</strong>, E. Tangermann, M. Klein
-        </div>
-        <div class="pub-title">
-          Investigation of transonic aerodynamics on a triple-delta wing in sideslip conditions
-        </div>
-        <div class="pub-venue"><em>CEAS Aeronautical Journal</em>, 2022</div>
-        <p style="font-size:0.83rem; color:#4b5563; margin-top:0.4rem; margin-bottom:0;">
-          Demonstrated RANS limitations and advantages of high-fidelity approaches for predicting
-          vortex and shock interactions, improving aerodynamic load predictions.
-        </p>
-        <div class="pub-links">
-          <span class="badge badge-blue" style="font-size:0.73rem;">CEAS Aeronautical Journal · 2022</span>
-        </div>
-      </li>
+    <div class="pub">
+      <div class="pub-title">Flow pattern analysis on a delta wing at transonic speed</div>
+      <div class="pub-authors"><strong>T. Di Fabbio</strong>, E. Tangermann, M. Klein</div>
+      <div class="pub-venue">AIAA SciTech Forum, San Diego, 2022</div>
+      <div class="pub-doi"><a href="https://doi.org/10.2514/6.2022-1204" target="_blank" rel="noopener">doi: 10.2514/6.2022-1204</a></div>
+    </div>
 
-    </ul>
+    <div class="pub">
+      <div class="pub-title">Investigation of leading-edge vortices on a triple-delta-wing configuration using scale-adaptive simulation</div>
+      <div class="pub-authors"><strong>T. Di Fabbio</strong>, E. Tangermann, M. Klein</div>
+      <div class="pub-venue">ICAS Congress, Stockholm, 2022</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">Investigation of Reynolds stresses prior to vortex breakdown on a triple-delta wing at transonic condition</div>
+      <div class="pub-authors"><strong>T. Di Fabbio</strong>, E. Tangermann, M. Klein</div>
+      <div class="pub-venue">TSFP12, Osaka, 2022</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">Comparative scale-resolving and RANS simulations of a delta wing configuration</div>
+      <div class="pub-authors"><strong>T. Di Fabbio</strong>, E. Tangermann, M. Klein, S. Ketterl, A. Winkler</div>
+      <div class="pub-venue">DGLR Conference, Bonn, 2020</div>
+    </div>
+
   </div>
-</section>
 
-<!-- Conference Papers -->
-<section>
-  <div class="container">
-    <div class="section-label">Conferences</div>
-    <h2>Conference Presentations &amp; Proceedings</h2>
-    <ul class="pub-list">
+  <!-- ── THESES ── -->
+  <div class="section">
+    <div class="section-title">Theses</div>
 
-      <li class="pub-item">
-        <div class="pub-authors">
-          G. A. Bres, C. B. Ivey, L. Heidt, K. Wang, S. T. Bose, R. Hottois, J. Guerrero, <strong>T. Di Fabbio</strong>
-        </div>
-        <div class="pub-title">
-          GPU-Accelerated Large-Eddy Simulations of High-Speed Cavity Flows With Dynamic Doors Deployment
-        </div>
-        <div class="pub-venue">32nd AIAA/CEAS Aeroacoustics Conference, 2026, pp. 3359</div>
-      </li>
+    <div class="pub">
+      <div class="pub-title">Efficient Turbulence Modelling for Vortical Flows from Swept Leading Edges</div>
+      <div class="pub-authors"><strong>T. Di Fabbio</strong></div>
+      <div class="pub-venue">PhD thesis · Universität der Bundeswehr München · 2024 · Summa cum Laude</div>
+    </div>
 
-      <li class="pub-item">
-        <div class="pub-authors">
-          E. Segalerba, <strong>T. Di Fabbio</strong>, V. Rossano, J. Guerrero
-        </div>
-        <div class="pub-title">
-          Towards a generalized open-source turbulence model for external aerodynamics
-        </div>
-        <div class="pub-venue">20th OpenFOAM Workshop (OFW20), Vienna, Austria, 2025</div>
-      </li>
+    <div class="pub">
+      <div class="pub-title">Numerical simulation of a sub-scale rocket combustor</div>
+      <div class="pub-authors"><strong>T. Di Fabbio</strong></div>
+      <div class="pub-venue">Master's thesis · Politecnico di Torino · 2019 · Grade 110/110 cum laude</div>
+      <div class="pub-doi"><a href="http://webthesis.biblio.polito.it/id/eprint/12809" target="_blank" rel="noopener">webthesis.biblio.polito.it/12809</a></div>
+    </div>
 
-      <li class="pub-item">
-        <div class="pub-authors">
-          V. Rossano, <strong>T. Di Fabbio</strong>, E. Segalerba, J. Guerrero
-        </div>
-        <div class="pub-title">
-          Verification and Validation of OpenFOAM for High-Speed Aerodynamics
-        </div>
-        <div class="pub-venue">20th OpenFOAM Workshop (OFW20), Vienna, Austria, 2025</div>
-      </li>
-
-      <li class="pub-item">
-        <div class="pub-authors">
-          G. Zampa, <strong>T. Di Fabbio</strong>, E. Segalerba, J. Guerrero
-        </div>
-        <div class="pub-title">
-          Optimization of Hypersonic Re-Entry Vehicle Aerodynamics for Communication Blackout Mitigation
-        </div>
-        <div class="pub-venue">European Microwave Week, Utrecht, The Netherlands, 2025</div>
-      </li>
-
-      <li class="pub-item">
-        <div class="pub-authors">
-          <strong>T. Di Fabbio</strong>, E. Segalerba, E. Tangermann, M. Klein
-        </div>
-        <div class="pub-title">
-          Towards a machine learning-augmented one-equation turbulence model for external aerodynamics in an open-source framework
-        </div>
-        <div class="pub-venue">DGLR Conference, Augsburg, Germany, 2025</div>
-      </li>
-
-      <li class="pub-item">
-        <div class="pub-authors">
-          <strong>T. Di Fabbio</strong>, E. Tangermann, M. Klein
-        </div>
-        <div class="pub-title">Flow pattern analysis on a delta wing at transonic speed</div>
-        <div class="pub-venue">AIAA SciTech Forum, San Diego, CA, 2022</div>
-      </li>
-
-      <li class="pub-item">
-        <div class="pub-authors">
-          <strong>T. Di Fabbio</strong>, E. Tangermann, M. Klein
-        </div>
-        <div class="pub-title">
-          Investigation of leading-edge vortices on a triple-delta-wing configuration using scale-adaptive simulation
-        </div>
-        <div class="pub-venue">ICAS Congress, Stockholm, Sweden, 2022</div>
-      </li>
-
-      <li class="pub-item">
-        <div class="pub-authors">
-          <strong>T. Di Fabbio</strong>, E. Tangermann, M. Klein
-        </div>
-        <div class="pub-title">
-          Investigation of Reynolds stresses prior to vortex breakdown on a triple-delta wing at transonic condition
-        </div>
-        <div class="pub-venue">12th International Symposium on Turbulence and Shear Flow Phenomena (TSFP12), Osaka, Japan, 2022</div>
-      </li>
-
-      <li class="pub-item">
-        <div class="pub-authors">
-          <strong>T. Di Fabbio</strong>, E. Tangermann, M. Klein, S. Ketterl, A. Winkler
-        </div>
-        <div class="pub-title">
-          Comparative scale-resolving and RANS simulations of a delta wing configuration
-        </div>
-        <div class="pub-venue">DGLR Conference, Bonn, Germany, 2020</div>
-      </li>
-
-    </ul>
   </div>
-</section>
+
+  <!-- ── AWARDS AND FUNDING ── -->
+  <div class="section">
+    <div class="section-title">Awards &amp; Funding</div>
+
+    <p style="font-size:.87rem;color:#374151;margin-bottom:1.25rem;">Competitive fellowships, scholarships and computing allocations received since 2014.</p>
+
+    <table class="award-table">
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Award</th>
+          <th>Details</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2025</td>
+          <td>MSCA Global Postdoctoral Fellowship</td>
+          <td>European Union Horizon Europe — Marie Skłodowska-Curie Actions. Seal of Excellence. Covers salary, research, travel and overheads for the 36-month LINERFUN project across Politecnico di Torino, University of Melbourne and ONERA.</td>
+          <td><span class="award-amount">€309,154</span></td>
+        </tr>
+        <tr>
+          <td>2020–2024</td>
+          <td>Airbus Defence and Space Doctoral Fellowship</td>
+          <td>Full doctoral funding including salary, research costs and computing resources at Universität der Bundeswehr München.</td>
+          <td><span class="award-amount">€344,240</span></td>
+        </tr>
+        <tr>
+          <td>2020–2024</td>
+          <td>Leibniz Supercomputing Centre — LRZ computing allocation</td>
+          <td>60 million CPU core-hours on SuperMUC-NG for large-scale turbulence and aerodynamics simulations. Equivalent computing value approximately €1.2 million.</td>
+          <td><span class="award-amount">~60M CPU·h</span></td>
+        </tr>
+        <tr>
+          <td>2024</td>
+          <td>DAAD Research Fellowship</td>
+          <td>German Academic Exchange Service fellowship for a three-month research visit to the University of Melbourne.</td>
+          <td><span class="award-amount">€7,050</span></td>
+        </tr>
+        <tr>
+          <td>2020–2023</td>
+          <td>EDISU Piedmont — Merit scholarship</td>
+          <td>Regional merit-based scholarship for doctoral research at Politecnico di Torino.</td>
+          <td><span class="award-amount">€25,000</span></td>
+        </tr>
+        <tr>
+          <td>2017</td>
+          <td>POLITO Young Talents — Exchange scholarship</td>
+          <td>Scholarship for the semester exchange at École Centrale Paris under the EU Young Talents programme.</td>
+          <td><span class="award-amount">€4,200</span></td>
+        </tr>
+        <tr>
+          <td>2018–2019</td>
+          <td>Erasmus+ scholarship</td>
+          <td>Exchange scholarship for the academic year at Technische Universität München.</td>
+          <td><span class="award-amount">€6,000</span></td>
+        </tr>
+        <tr>
+          <td>2015–2018</td>
+          <td>Collegio Einaudi — Merit scholarship</td>
+          <td>Annual scholarship awarded three times by the Collegio Universitario R. Einaudi, Turin, for academic merit.</td>
+          <td><span class="award-amount">€1,000 × 3</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <!-- ── SUPERVISION ── -->
+  <div class="section" style="border-bottom:none;">
+    <div class="section-title">Supervision &amp; mentoring</div>
+    <p style="font-size:.87rem;color:#374151;">During my doctoral research (2020–2024) I supervised three Master's students and two Bachelor's students at the Universität der Bundeswehr München, guiding their projects on turbulence modelling and computational aerodynamics. If you are interested in a research collaboration or student placement within LINERFUN, please <a href="mailto:tony.difabbio@polito.it">get in touch</a>.</p>
+  </div>
+
+</div><!-- /col -->
 
 <footer>
   <div class="footer-inner">
-    <div class="footer-col">
-      <h4>Tony Di Fabbio</h4>
-      <p>MSCA Global Postdoctoral Fellow</p>
-      <p>Politecnico di Torino</p>
-    </div>
-    <div class="footer-col">
-      <h4>Links</h4>
-      <a href="index.html">Home</a>
-      <a href="project.html">LINERFUN Project</a>
-      <a href="about.html">About &amp; CV</a>
-      <a href="news.html">News</a>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <a href="mailto:tonydifabbio@gmail.com">tonydifabbio@gmail.com</a>
-      <a href="https://twitter.com/tonydifabbio" target="_blank">@tonydifabbio</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© <span id="footer-year"></span> Tony Di Fabbio</span>
-    <span class="eu-flag">🇪🇺 MSCA Grant Agreement No. 101206371</span>
+    <span class="footer-copy">© <span id="footer-year"></span> Tony Di Fabbio</span>
+    <span class="footer-eu">🇪🇺 EU Horizon Europe — MSCA Grant 101206371</span>
   </div>
 </footer>
 

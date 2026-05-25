@@ -3,234 +3,294 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LINERFUN Project | Tony Di Fabbio</title>
-  <meta name="description" content="LINERFUN: Physics-informed Time-Domain Impedance Boundary Conditions for Scale-Resolving Simulations of Acoustic Liners in UHBR Engines. MSCA Global Fellowship, Grant 101206371.">
+  <title>Project — LINERFUN</title>
+  <meta name="description" content="LINERFUN: developing better tools to design quieter aircraft engines. An EU-funded Marie Skłodowska-Curie research project. Grant 101206371.">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ---- Status / Progress ---- */
+    .status-card {
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .status-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .status-title { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--subtle); }
+    .status-month { font-size: 0.8rem; font-weight: 600; color: var(--navy); }
+
+    /* Progress bar with 4 phase segments */
+    .phase-bar {
+      display: grid;
+      grid-template-columns: 3fr 4fr 17fr 12fr;
+      gap: 3px;
+      height: 10px;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 0.6rem;
+    }
+    .phase-seg { height: 100%; border-radius: 2px; position: relative; }
+    .phase-polito-1 { background: #2563eb; }
+    .phase-onera    { background: #c1121f; }
+    .phase-uom      { background: #00285e; }
+    .phase-polito-2 { background: #2563eb; opacity: 0.5; }
+    /* progress overlay */
+    .phase-progress {
+      position: absolute; top: 0; left: 0; height: 100%;
+      background: rgba(255,255,255,0.35);
+      border-radius: 2px;
+    }
+
+    .phase-labels {
+      display: grid;
+      grid-template-columns: 3fr 4fr 17fr 12fr;
+      gap: 3px;
+      margin-bottom: 1rem;
+    }
+    .phase-label {
+      font-size: 0.62rem;
+      color: var(--muted);
+      line-height: 1.3;
+    }
+    .phase-label strong { display: block; font-weight: 700; }
+
+    .status-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .status-pill {
+      font-size: 0.72rem; font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+    }
+    .pill-active { background: #dcfce7; color: #166534; }
+    .pill-next   { background: #f1f5f9; color: #475569; }
+
+    /* ---- Why section pull-quote ---- */
+    .pull-quote {
+      border-left: 3px solid var(--blue);
+      padding: 0.75rem 1.25rem;
+      margin: 1.25rem 0;
+      background: var(--blue-lt);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: 0.92rem;
+      color: var(--navy);
+      line-height: 1.55;
+    }
+
+    /* ---- Objectives grid ---- */
+    .obj-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .obj-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      background: #fff;
+      border-top: 3px solid var(--blue);
+    }
+    .obj-num { font-size: 0.68rem; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: .06em; margin-bottom: .35rem; }
+    .obj-card h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: .35rem; color: var(--navy); }
+    .obj-card p  { font-size: 0.8rem; color: #4b5563; margin: 0; line-height: 1.5; }
+  </style>
 </head>
 <body>
 
 <div class="eu-banner">
-  This project has received funding from the European Union's Horizon Europe research and innovation programme under the Marie Skłodowska-Curie Actions Grant Agreement No. <strong>101206371</strong>.
+  Funded by the EU Horizon Europe — Marie Skłodowska-Curie Actions, Grant Agreement No. <strong>101206371</strong>
 </div>
 
 <nav>
   <div class="nav-inner">
-    <a class="nav-logo" href="index.html">Tony Di Fabbio &nbsp;<span>·</span>&nbsp; LINERFUN</a>
+    <a class="nav-logo" href="index.html">
+      <img src="img/logo.svg" alt="LINERFUN">
+      LINERFUN
+    </a>
     <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">Home</a></li>
       <li><a href="project.html">Project</a></li>
+      <li><a href="about.html">Bio</a></li>
       <li><a href="research.html">Research</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="news.html">News</a></li>
+      <li><a href="blog.html">Blog</a></li>
     </ul>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
-      </svg>
-    </button>
   </div>
 </nav>
 
-<header class="page-header">
-  <div class="container">
-    <div class="section-label">MSCA Global Fellowship · Grant 101206371</div>
+<div class="col">
+
+  <header class="page-hero">
+    <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.75rem;">
+      <span class="post-tag tag-msca">MSCA Global Fellowship</span>
+      <span class="post-tag" style="background:#e5e7eb;color:#374151;font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:100px;">Grant 101206371</span>
+      <span class="post-tag" style="background:#fef3c7;color:#92400e;font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:100px;">May 2026 – May 2029</span>
+    </div>
     <h1>LINERFUN</h1>
-    <p>Physics-informed Time-Domain Impedance Boundary Conditions for<br>Scale-Resolving Simulations of Acoustic Liners in UHBR Engines</p>
-  </div>
-</header>
+    <p>Making jet engines quieter — a three-year European research fellowship</p>
+  </header>
 
-<!-- Overview -->
-<section>
-  <div class="container">
-    <div class="project-meta" style="margin-bottom:2rem;">
-      <span class="badge badge-blue">MSCA Global Fellowship</span>
-      <span class="badge badge-green">Grant 101206371</span>
-      <span class="badge badge-amber">May 2026 – May 2029 (36 months)</span>
-      <span class="badge badge-gray">€309,153.72</span>
-      <span class="badge badge-gray">Horizon Europe</span>
-    </div>
+  <!-- ── STATUS ── -->
+  <div class="section">
+    <div class="section-title">Project status</div>
 
-    <div class="section-label">Background &amp; Motivation</div>
-    <h2>Why Acoustic Liners?</h2>
-    <p>
-      Aviation noise is a major environmental concern near airports. Acoustic liners — arrays
-      of resonant cavities bonded to the inner walls of turbofan nacelles — are the most
-      effective passive technology for attenuating engine noise. As turbofan designs evolve
-      towards <strong>Ultra-High Bypass Ratio (UHBR)</strong> architectures, shorter and wider
-      nacelles shrink the available liner surface area, placing greater demand on liner efficiency
-      per unit area.
-    </p>
-    <p>
-      Designing optimal liners requires accurate prediction of sound absorption in the presence
-      of grazing flow — a coupled aeroacoustic problem. Current industrial tools rely on
-      simplified frequency-domain methods that fail to capture non-linear and transient effects.
-      High-fidelity <strong>scale-resolving CFD/CAA</strong> methods offer much higher accuracy
-      but lack robust, physically consistent boundary conditions for liner surfaces.
-    </p>
+    <div class="status-card">
+      <div class="status-header">
+        <span class="status-title">Progress</span>
+        <span class="status-month" id="status-month">Month 1 of 36 · Politecnico di Torino</span>
+      </div>
 
-    <div class="section-label" style="margin-top:3rem;">The LINERFUN Approach</div>
-    <h2>piTDIBC Methodology</h2>
-    <p>
-      LINERFUN develops <strong>physics-informed Time-Domain Impedance Boundary Conditions (piTDIBC)</strong>:
-      a new class of boundary conditions that embed acoustic liner physics directly into
-      scale-resolving CFD/CAA solvers. The method combines:
-    </p>
+      <!-- Phase bar: M1-3 POLITO | M4-7 ONERA | M8-24 UOM | M25-36 POLITO -->
+      <div class="phase-bar" id="phase-bar">
+        <div class="phase-seg phase-polito-1"><div class="phase-progress" id="prog-1"></div></div>
+        <div class="phase-seg phase-onera"><div class="phase-progress" id="prog-2"></div></div>
+        <div class="phase-seg phase-uom"><div class="phase-progress" id="prog-3"></div></div>
+        <div class="phase-seg phase-polito-2"><div class="phase-progress" id="prog-4"></div></div>
+      </div>
 
-    <div class="research-grid">
-      <div class="research-card">
-        <h4>Time-Domain Impedance Models</h4>
-        <p>
-          Causality-consistent impedance formulations (based on the Shur et al. framework)
-          that support broadband liner responses across realistic operating conditions.
-        </p>
+      <div class="phase-labels">
+        <div class="phase-label"><strong style="color:#2563eb;">POLITO</strong>M1–3</div>
+        <div class="phase-label"><strong style="color:#c1121f;">ONERA</strong>M4–7</div>
+        <div class="phase-label"><strong style="color:#00285e;">Melbourne</strong>M8–24</div>
+        <div class="phase-label"><strong style="color:#2563eb;">POLITO</strong>M25–36</div>
       </div>
-      <div class="research-card">
-        <h4>Scale-Resolving Simulations</h4>
-        <p>
-          Large Eddy Simulation (LES) and Scale-Adaptive Simulation (SAS) on HPC platforms
-          (CINECA LEONARDO, NCI Australia) for high-fidelity flow–acoustics coupling.
-        </p>
-      </div>
-      <div class="research-card">
-        <h4>Physics-Informed Machine Learning</h4>
-        <p>
-          Data-driven techniques to extend impedance models and accelerate parameter
-          optimisation, informed by physical constraints from acoustic theory.
-        </p>
-      </div>
-      <div class="research-card">
-        <h4>Validation Hierarchy</h4>
-        <p>
-          Progressive validation from 1D analytical benchmarks (Casadei 2020) to
-          NASA GIT duct experiments and the LINING test case (Paduano et al. 2024).
-        </p>
-      </div>
-    </div>
 
-    <div class="section-label" style="margin-top:3rem;">Objectives</div>
-    <h2>Scientific Goals</h2>
-    <p>
-      LINERFUN is structured around three interconnected objectives:
-    </p>
-    <div class="timeline" style="margin-top:1.5rem;">
-      <div class="timeline-item">
-        <div class="timeline-date">Objective 1 — TDIBC Development</div>
-        <h3>Robust piTDIBC formulation for scale-resolving solvers</h3>
-        <p>Derive causality-compliant, numerically stable time-domain impedance models
-           compatible with compressible LES/SAS solvers. Validate against benchmark test cases.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">Objective 2 — Physics-Informed Learning</div>
-        <h3>Data-driven extension and calibration of impedance models</h3>
-        <p>Use physics-constrained machine learning to enrich impedance models with
-           non-linear effects and extend their validity to UHBR operating conditions.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">Objective 3 — Application</div>
-        <h3>Liner design for UHBR nacelles</h3>
-        <p>Apply the developed framework to realistic UHBR liner geometries, generating
-           guidelines and design tools transferable to industrial partners.</p>
+      <div class="status-pills">
+        <span class="status-pill pill-active">● Active — M1</span>
+        <span class="status-pill pill-next">ONERA secondment — from M4</span>
+        <span class="status-pill pill-next">Melbourne outgoing phase — from M8</span>
       </div>
     </div>
   </div>
-</section>
 
-<!-- Partners -->
-<section>
-  <div class="container">
-    <div class="section-label">Consortium</div>
-    <h2>Partner Institutions</h2>
-    <div class="partners-grid">
-      <div class="partner-card">
-        <div class="partner-role">Beneficiary · M1–6 &amp; M31–36</div>
-        <h4>Politecnico di Torino</h4>
-        <p>Dept. of Mechanical and Aerospace Engineering (DIMEAS)</p>
-        <p style="margin-top:0.5rem; font-size:0.82rem;"><strong>Supervisor:</strong> Prof. Francesco Avallone</p>
-        <p style="font-size:0.82rem;">Turin, Italy</p>
+  <!-- ── WHY ── -->
+  <div class="section">
+    <div class="section-title">Why this project matters</div>
+
+    <p>Aviation noise is one of the most widespread environmental problems associated with modern air travel. Millions of people living near airports are regularly exposed to noise levels that affect sleep, concentration, and long-term health. Engine noise is a major contributor — and reducing it is one of the central challenges in aircraft engineering.</p>
+
+    <div class="pull-quote">
+      The quietest part of a modern jet engine is not the fan or the turbine — it is a thin layer of carefully engineered material bonded to the inside of the engine casing. These are <strong>acoustic liners</strong>, and making them work better is what LINERFUN is about.
+    </div>
+
+    <p>Acoustic liners work like tiny sound traps: they are arrays of small cavities, each tuned to absorb specific sound frequencies produced by the engine. They have been used in aircraft for decades and remain the most effective passive solution for reducing engine noise at source.</p>
+
+    <p>The challenge is that next-generation engines — known as Ultra-High Bypass Ratio (UHBR) engines — are designed to be shorter and wider, which means the inner surface available for liners shrinks considerably. At the same time, the noise targets are becoming stricter. Designers therefore need every square centimetre of liner to perform as well as possible.</p>
+
+    <p>To achieve this, engineers need accurate tools that can predict how a liner will behave under realistic conditions — in particular, when a strong airflow passes over its surface at the same time as sound waves are trying to penetrate it. This coupled problem is surprisingly difficult to solve, and the methods currently used in industry rely on simplifications that can miss important physical effects.</p>
+
+    <p>LINERFUN develops a new generation of simulation tools — specifically, boundary conditions for high-fidelity computational simulations — that capture this physics accurately and are practical enough to be used in engineering design workflows.</p>
+  </div>
+
+  <!-- ── THE APPROACH ── -->
+  <div class="section">
+    <div class="section-title">The research approach</div>
+
+    <p>The core technical contribution of LINERFUN is a set of <strong>physics-informed Time-Domain Impedance Boundary Conditions</strong> — a mouthful, but the idea is straightforward. When running a high-fidelity computer simulation of airflow inside an engine duct, you need a way to tell the simulation how the liner surface behaves acoustically. The boundary condition does exactly that: it translates the physical properties of the liner into a mathematical instruction that the simulation can use at every timestep.</p>
+
+    <p>The challenge is that existing boundary conditions were designed for simpler, frequency-domain methods. Adapting them to time-domain, scale-resolving simulations — which are far more accurate but computationally demanding — without losing physical consistency is a non-trivial problem. LINERFUN addresses it by embedding physical constraints directly into the model, and by using machine learning to extend its validity to conditions that are difficult to characterise analytically.</p>
+
+    <p>The approach is validated progressively against a hierarchy of test cases, starting from well-understood one-dimensional benchmarks and building up to realistic duct configurations with experimental data.</p>
+
+    <div class="obj-grid">
+      <div class="obj-card">
+        <div class="obj-num">Objective 1</div>
+        <h4>Robust boundary conditions</h4>
+        <p>Develop causality-consistent, numerically stable liner boundary conditions compatible with large-eddy and scale-adaptive solvers.</p>
       </div>
-      <div class="partner-card">
-        <div class="partner-role">Outgoing Host · M7–30</div>
-        <h4>University of Melbourne</h4>
-        <p>School of Mechanical Engineering</p>
-        <p style="margin-top:0.5rem; font-size:0.82rem;"><strong>Supervisor:</strong> Prof. Richard Sandberg</p>
-        <p style="font-size:0.82rem;">Melbourne, Australia</p>
+      <div class="obj-card">
+        <div class="obj-num">Objective 2</div>
+        <h4>Physics-informed machine learning</h4>
+        <p>Use data-driven techniques to extend the models to non-linear operating conditions while preserving interpretability.</p>
       </div>
-      <div class="partner-card">
-        <div class="partner-role">Secondment</div>
-        <h4>ONERA</h4>
-        <p>The French Aerospace Lab — Branch B2A</p>
-        <p style="margin-top:0.5rem; font-size:0.82rem;"><strong>Supervisor:</strong> Dr. Estelle Piot</p>
-        <p style="font-size:0.82rem;">Toulouse, France</p>
+      <div class="obj-card">
+        <div class="obj-num">Objective 3</div>
+        <h4>Liner design for UHBR engines</h4>
+        <p>Apply the framework to realistic next-generation liner geometries and produce design guidelines transferable to industry.</p>
       </div>
     </div>
   </div>
-</section>
 
-<!-- Project Timeline -->
-<section>
-  <div class="container">
-    <div class="section-label">Schedule</div>
-    <h2>Project Timeline</h2>
-    <div class="timeline" style="margin-top:1.5rem;">
-      <div class="timeline-item">
-        <div class="timeline-date">M1–6 · May–Oct 2026 · POLITO (Incoming)</div>
-        <h3>Phase 1 — Foundation</h3>
-        <p>Deliverables: DMP (D1.1), RMP (D1.2), FMP (D1.3), CDP (D5.1), DECP (D6.1). Literature review, TDIBC baseline implementation, HPC platform setup, CINECA LEONARDO proposal.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">M7–30 · Nov 2026 – Oct 2028 · UOM (Outgoing)</div>
-        <h3>Phase 2 — Core Research</h3>
-        <p>TDIBC development and validation. Scale-resolving simulations of liner test cases. Physics-informed ML extension. Collaboration with ONERA TDIBC team.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">M31–36 · Nov 2028 – Apr 2029 · POLITO (Return)</div>
-        <h3>Phase 3 — Application &amp; Dissemination</h3>
-        <p>UHBR liner design studies. Dissemination activities, workshops, open-data packages. Final reporting to REA.</p>
-      </div>
-    </div>
+  <!-- ── PARTNERS ── -->
+  <div class="section">
+    <div class="section-title">Institutions involved</div>
+    <ul class="tl">
+      <li class="tl-item">
+        <div class="tl-date">Beneficiary<br>M1–3 &amp; M25–36<br><span style="color:#2563eb;font-weight:700;">Turin, Italy</span></div>
+        <div class="tl-body">
+          <h3>Politecnico di Torino</h3>
+          <p>One of Italy's leading engineering universities, ranked 41st globally in Engineering and Technology (QS 2020). The host department — Mechanical and Aerospace Engineering (DIMEAS) — runs the <a href="https://lining.polito.it" target="_blank">LINING project</a>, an ERC-funded research programme on acoustic liners with which LINERFUN is closely connected. Supervisor: Prof. Francesco Avallone.</p>
+        </div>
+      </li>
+      <li class="tl-item">
+        <div class="tl-date">Secondment<br>M4–7<br><span style="color:#c1121f;font-weight:700;">Toulouse, France</span></div>
+        <div class="tl-body">
+          <h3>ONERA — The French Aerospace Lab</h3>
+          <p>France's national aerospace research centre, founded in 1946. ONERA's Branch B2A in Toulouse specialises in the experimental characterisation of acoustic liners and their modelling. The team offers access to a dedicated wind tunnel for aeroacoustic testing, where LINERFUN will contribute to a joint experimental campaign. Supervisor: Dr. Estelle Piot.</p>
+        </div>
+      </li>
+      <li class="tl-item">
+        <div class="tl-date">Outgoing host<br>M8–24<br><span style="color:#00285e;font-weight:700;">Melbourne, Australia</span></div>
+        <div class="tl-body">
+          <h3>University of Melbourne</h3>
+          <p>Ranked 12th globally (QS), Melbourne's Computational Mechanics group leads the development of HiPSTAR — a high-performance simulation code for turbulent flows and aeroacoustics, which is the primary tool used in LINERFUN. The group also develops the machine learning framework EVE3 used for data-driven model enhancement. Supervisor: Prof. Richard Sandberg.</p>
+        </div>
+      </li>
+    </ul>
   </div>
-</section>
 
-<!-- Acknowledgment -->
-<section style="background:#f0f4ff; padding:3rem 0;">
-  <div class="container" style="text-align:center; max-width:680px;">
-    <div class="eu-flag" style="justify-content:center; font-size:1rem; color:#1e3a5f; margin-bottom:0.75rem;">🇪🇺 EU Acknowledgment</div>
-    <p style="color:#374151;">
-      This project has received funding from the European Union's Horizon Europe research and
-      innovation programme under the Marie Skłodowska-Curie Actions (MSCA) Global Postdoctoral
-      Fellowship, Grant Agreement No. <strong>101206371</strong>. Views and opinions expressed
-      are those of the author only and do not necessarily reflect those of the European Union or
-      the European Research Executive Agency (REA).
+  <!-- ── EU ACKNOWLEDGMENT ── -->
+  <div class="section" style="border-bottom:none;">
+    <div class="section-title">Acknowledgement</div>
+    <p style="font-size:.82rem;color:var(--muted);line-height:1.6;">
+      This project has received funding from the European Union's Horizon Europe research and innovation programme under the Marie Skłodowska-Curie Actions Global Postdoctoral Fellowship, Grant Agreement No. 101206371. Views and opinions expressed are those of the author only and do not necessarily reflect those of the European Union or the Research Executive Agency (REA). Neither the European Union nor the REA can be held responsible for them.
     </p>
   </div>
-</section>
+
+</div><!-- /col -->
 
 <footer>
   <div class="footer-inner">
-    <div class="footer-col">
-      <h4>Tony Di Fabbio</h4>
-      <p>MSCA Global Postdoctoral Fellow</p>
-      <p>Politecnico di Torino</p>
-    </div>
-    <div class="footer-col">
-      <h4>Links</h4>
-      <a href="index.html">Home</a>
-      <a href="research.html">Publications</a>
-      <a href="about.html">About &amp; CV</a>
-      <a href="news.html">News</a>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <a href="mailto:tonydifabbio@gmail.com">tonydifabbio@gmail.com</a>
-      <a href="https://twitter.com/tonydifabbio" target="_blank">@tonydifabbio</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© <span id="footer-year"></span> Tony Di Fabbio</span>
-    <span class="eu-flag">🇪🇺 MSCA Grant Agreement No. 101206371</span>
+    <span class="footer-copy">© <span id="footer-year"></span> Tony Di Fabbio</span>
+    <span class="footer-eu">🇪🇺 EU Horizon Europe — MSCA Grant 101206371</span>
   </div>
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+  // Compute current month from project start (May 2026)
+  const start = new Date(2026, 4, 1); // May 2026
+  const now   = new Date();
+  const diff  = (now.getFullYear() - start.getFullYear()) * 12 + (now.getMonth() - start.getMonth());
+  const m     = Math.max(1, Math.min(36, diff + 1));
+
+  // Phase boundaries: M1-3 POLITO, M4-7 ONERA, M8-24 UOM, M25-36 POLITO
+  const phases = [
+    { start: 1,  end: 3,  label: 'Politecnico di Torino' },
+    { start: 4,  end: 7,  label: 'ONERA, Toulouse'       },
+    { start: 8,  end: 24, label: 'University of Melbourne'},
+    { start: 25, end: 36, label: 'Politecnico di Torino' },
+  ];
+
+  let currentPhase = phases.find(p => m >= p.start && m <= p.end) || phases[0];
+  document.getElementById('status-month').textContent =
+    `Month ${m} of 36 · ${currentPhase.label}`;
+
+  // Fill progress within each phase segment
+  phases.forEach((p, i) => {
+    const el = document.getElementById(`prog-${i+1}`);
+    if (!el) return;
+    if (m > p.end)       { el.style.width = '100%'; }
+    else if (m < p.start){ el.style.width = '0%'; }
+    else {
+      const pct = ((m - p.start) / (p.end - p.start + 1)) * 100;
+      el.style.width = pct + '%';
+    }
+  });
+</script>
 </body>
 </html>

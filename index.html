@@ -3,243 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tony Di Fabbio | MSCA Fellow – LINERFUN</title>
-  <meta name="description" content="Personal website of Tony Di Fabbio, Dr.-Ing. MSCA Global Postdoctoral Fellow at Politecnico di Torino. LINERFUN project: acoustic liners for UHBR aero-engines.">
+  <title>LINERFUN — Tony Di Fabbio</title>
+  <meta name="description" content="LINERFUN — MSCA Global Fellowship by Tony Di Fabbio. Physics-informed acoustic liner research for UHBR aero-engines. Politecnico di Torino · University of Melbourne · ONERA.">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="landing-body">
 
-<!-- EU Acknowledgment -->
+<!-- EU Banner -->
 <div class="eu-banner">
-  This project has received funding from the European Union's Horizon Europe research and innovation programme under the Marie Skłodowska-Curie Actions Grant Agreement No. <strong>101206371</strong>.
+  Funded by the EU Horizon Europe — Marie Skłodowska-Curie Actions, Grant Agreement No. <strong>101206371</strong>
 </div>
 
-<!-- Navigation -->
-<nav>
-  <div class="nav-inner">
-    <a class="nav-logo" href="index.html">Tony Di Fabbio &nbsp;<span>·</span>&nbsp; LINERFUN</a>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="project.html">Project</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="news.html">News</a></li>
-    </ul>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
-      </svg>
-    </button>
-  </div>
-</nav>
+<!-- Centered splash -->
+<main class="landing-main">
+  <div class="splash">
 
-<!-- Hero -->
-<header class="hero">
-  <div class="hero-inner">
-    <div>
-      <div class="hero-tag">🇪🇺 MSCA Global Postdoctoral Fellow</div>
-      <h1>Tony Di Fabbio, Dr.-Ing.</h1>
-      <p class="hero-subtitle">Aeroacoustics · CFD/CAA · Physics-Informed ML</p>
-      <p class="hero-desc">
-        I am a postdoctoral researcher at <strong>Politecnico di Torino</strong>,
-        working on advanced acoustic liner technologies for next-generation
-        Ultra-High Bypass Ratio aero-engines. My fellowship is funded by
-        the EU's Marie Skłodowska-Curie Actions (MSCA, Grant 101206371).
-      </p>
-      <div class="hero-links">
-        <a href="project.html" class="btn btn-primary">LINERFUN Project →</a>
-        <a href="research.html" class="btn btn-outline">Publications</a>
-        <a href="about.html" class="btn btn-outline">About Me</a>
-        <a href="mailto:tonydifabbio@gmail.com" class="btn btn-outline">Contact</a>
-      </div>
-    </div>
-    <div class="hero-photo">👤</div>
-  </div>
-</header>
+    <!-- Logo -->
+    <img src="img/logo.svg" alt="LINERFUN logo" class="splash-logo">
 
-<!-- Stats Strip -->
-<div class="stats-strip">
-  <div class="container">
-    <div class="stats-grid">
-      <div>
-        <div class="stat-num">6</div>
-        <div class="stat-label">Journal Articles</div>
-      </div>
-      <div>
-        <div class="stat-num">10+</div>
-        <div class="stat-label">Conference Papers</div>
-      </div>
-      <div>
-        <div class="stat-num">€309K</div>
-        <div class="stat-label">MSCA Funding</div>
-      </div>
-      <div>
-        <div class="stat-num">3</div>
-        <div class="stat-label">Research Institutions</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- LINERFUN Spotlight -->
-<section>
-  <div class="container">
-    <div class="section-label">Current Project</div>
-    <h2>LINERFUN</h2>
-    <p style="max-width:680px; color:#4b5563; margin-bottom:2rem;">
-      A 36-month Marie Skłodowska-Curie Global Fellowship combining high-fidelity
-      scale-resolving simulations, physics-informed impedance boundary conditions,
-      and machine learning to redesign acoustic liners for quieter UHBR jet engines.
+    <!-- Title -->
+    <h1>LINERFUN</h1>
+    <p class="splash-author">Tony Di Fabbio, Dr.-Ing.</p>
+    <p class="splash-tagline">
+      MSCA Global Postdoctoral Fellow · Acoustic liners for UHBR aero-engines ·
+      Physics-informed CFD/CAA · Politecnico di Torino
     </p>
 
-    <div class="project-card">
-      <h3>Physics-informed Time-Domain Impedance Boundary Conditions for Scale-Resolving Simulations of Acoustic Liners in UHBR Engines</h3>
-      <div class="project-meta">
-        <span class="badge badge-blue">MSCA Global Fellowship</span>
-        <span class="badge badge-green">Grant 101206371</span>
-        <span class="badge badge-amber">May 2026 – May 2029</span>
-        <span class="badge badge-gray">€ 309,153.72</span>
-      </div>
-      <p>
-        Acoustic liners are the primary noise-reduction technology inside turbofan nacelles.
-        As engines evolve towards ultra-high bypass ratios (UHBR), shorter and wider nacelles
-        leave less wall area for liners — making their design critically more demanding.
-        LINERFUN develops <strong>physics-informed Time-Domain Impedance Boundary Conditions (piTDIBC)</strong>
-        suitable for scale-resolving CFD/CAA, enabling accurate, low-cost optimisation
-        of next-generation liners.
-      </p>
-      <div style="margin-top:1.25rem;">
-        <a href="project.html" class="btn btn-blue">Read More</a>
-      </div>
+    <!-- Institution badges -->
+    <div class="inst-row">
+
+      <!-- POLITO -->
+      <a href="https://www.polito.it" target="_blank" rel="noopener" class="inst-badge inst-polito">
+        <img src="img/logo-polito.png" alt="" onerror="this.style.display='none'">
+        Politecnico di Torino
+      </a>
+
+      <!-- UoM -->
+      <a href="https://www.unimelb.edu.au" target="_blank" rel="noopener" class="inst-badge inst-uom">
+        <img src="img/logo-uom.png" alt="" onerror="this.style.display='none'">
+        Univ. of Melbourne
+      </a>
+
+      <!-- ONERA -->
+      <a href="https://www.onera.fr" target="_blank" rel="noopener" class="inst-badge inst-onera">
+        <img src="img/logo-onera.png" alt="" onerror="this.style.display='none'">
+        ONERA
+      </a>
+
+      <!-- MSCA -->
+      <a href="https://marie-sklodowska-curie-actions.ec.europa.eu" target="_blank" rel="noopener" class="inst-badge inst-msca">
+        <img src="img/logo-msca.png" alt="" onerror="this.style.display='none'">
+        🇪🇺 MSCA
+      </a>
+
     </div>
 
-    <!-- Partner Institutions -->
-    <div class="partners-grid" style="margin-top:3rem;">
-      <div class="partner-card">
-        <div class="partner-role">Beneficiary</div>
-        <h4>Politecnico di Torino</h4>
-        <p>Turin, Italy</p>
-        <p style="margin-top:0.4rem; font-size:0.82rem;">Supervisor: Prof. Francesco Avallone (DIMEAS)</p>
-      </div>
-      <div class="partner-card">
-        <div class="partner-role">Outgoing Host</div>
-        <h4>University of Melbourne</h4>
-        <p>Melbourne, Australia</p>
-        <p style="margin-top:0.4rem; font-size:0.82rem;">Supervisor: Prof. Richard Sandberg (Mech. Eng.)</p>
-      </div>
-      <div class="partner-card">
-        <div class="partner-role">Secondment</div>
-        <h4>ONERA</h4>
-        <p>Toulouse, France</p>
-        <p style="margin-top:0.4rem; font-size:0.82rem;">Supervisor: Dr. Estelle Piot (B2A)</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- Navigation cards -->
+    <nav class="nav-grid" aria-label="Site navigation">
 
-<!-- Research Areas -->
-<section>
-  <div class="container">
-    <div class="section-label">Research</div>
-    <h2>Fields of Expertise</h2>
-    <div class="research-grid">
-      <div class="research-card">
-        <h4>Aeroacoustics &amp; Acoustic Liners</h4>
-        <p>Time-domain impedance models, duct acoustics, liner optimisation for UHBR nacelles.</p>
-      </div>
-      <div class="research-card">
-        <h4>Scale-Resolving CFD/CAA</h4>
-        <p>LES, SAS, high-fidelity simulations on HPC (CINECA LEONARDO, NCI, POLITO LEGION).</p>
-      </div>
-      <div class="research-card">
-        <h4>Turbulence Modelling &amp; RANS</h4>
-        <p>Delta-wing vortical flows, vortex breakdown, one-equation model extensions.</p>
-      </div>
-      <div class="research-card">
-        <h4>Physics-Informed ML</h4>
-        <p>Gene Expression Programming for turbulence closures; solver-in-the-loop training.</p>
-      </div>
-      <div class="research-card">
-        <h4>High-Speed Compressible Flows</h4>
-        <p>Supersonic/hypersonic aerodynamics, cavity flows, digital twin frameworks.</p>
-      </div>
-      <div class="research-card">
-        <h4>Multi-Disciplinary Optimisation</h4>
-        <p>Evolutionary algorithms, GEP for MDO, CFD-driven design processes.</p>
-      </div>
-    </div>
-    <div style="margin-top:2rem;">
-      <a href="research.html" class="btn btn-blue">Publications &amp; Research →</a>
-    </div>
-  </div>
-</section>
-
-<!-- Latest News -->
-<section>
-  <div class="container">
-    <div class="section-label">News</div>
-    <h2>Latest Updates</h2>
-    <div class="news-grid">
-      <div class="news-card">
-        <div class="news-card-body">
-          <div class="news-date">May 2026</div>
-          <h3>LINERFUN officially starts</h3>
-          <p>The MSCA Global Fellowship LINERFUN (Grant 101206371) has officially started at Politecnico di Torino. Month 1 of 36.</p>
+      <a href="project.html" class="nav-card">
+        <div class="nav-card-icon icon-project">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/>
+          </svg>
         </div>
-        <div class="news-card-footer"><a href="news.html">Read more →</a></div>
-      </div>
-      <div class="news-card">
-        <div class="news-card-body">
-          <div class="news-date">2026</div>
-          <h3>Paper accepted in AIAA Journal</h3>
-          <p>New journal article on GEP-enhanced turbulence modelling for delta wing flows accepted in AIAA Journal.</p>
-        </div>
-        <div class="news-card-footer"><a href="research.html">See publications →</a></div>
-      </div>
-      <div class="news-card">
-        <div class="news-card-body">
-          <div class="news-date">2026</div>
-          <h3>AIAA/CEAS Aeroacoustics Conference</h3>
-          <p>Co-author on GPU-accelerated LES of high-speed cavity flows with dynamic door deployment, presented at the 32nd AIAA/CEAS Aeroacoustics Conference.</p>
-        </div>
-        <div class="news-card-footer"><a href="research.html">See publications →</a></div>
-      </div>
-    </div>
-    <div style="margin-top:2rem;">
-      <a href="news.html" class="btn btn-blue">All News →</a>
-    </div>
-  </div>
-</section>
+        <div class="nav-card-title">Project</div>
+        <div class="nav-card-desc">LINERFUN — objectives, methodology, status &amp; updates</div>
+      </a>
 
-<!-- Footer -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-col">
-      <h4>Tony Di Fabbio</h4>
-      <p>MSCA Global Postdoctoral Fellow</p>
-      <p>Politecnico di Torino</p>
-      <p>Dept. of Mechanical and Aerospace Engineering (DIMEAS)</p>
-    </div>
-    <div class="footer-col">
-      <h4>Links</h4>
-      <a href="project.html">LINERFUN Project</a>
-      <a href="research.html">Publications</a>
-      <a href="about.html">About &amp; CV</a>
-      <a href="news.html">News</a>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <a href="mailto:tonydifabbio@gmail.com">tonydifabbio@gmail.com</a>
-      <a href="https://twitter.com/tonydifabbio" target="_blank">@tonydifabbio</a>
-      <a href="https://www.linkedin.com/in/tony-di-fabbio" target="_blank">LinkedIn</a>
-    </div>
+      <a href="about.html" class="nav-card">
+        <div class="nav-card-icon icon-bio">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#166534" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+        </div>
+        <div class="nav-card-title">Bio</div>
+        <div class="nav-card-desc">Career, education, CV download</div>
+      </a>
+
+      <a href="research.html" class="nav-card">
+        <div class="nav-card-icon icon-research">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#6b21a8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/>
+          </svg>
+        </div>
+        <div class="nav-card-title">Research</div>
+        <div class="nav-card-desc">Publications, conferences &amp; awards</div>
+      </a>
+
+      <a href="blog.html" class="nav-card">
+        <div class="nav-card-icon icon-blog">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16v2.5c0 5-3 9-8 11-5-2-8-6-8-11V4z"/><path d="M9 12l2 2 4-4"/>
+          </svg>
+        </div>
+        <div class="nav-card-title">Blog</div>
+        <div class="nav-card-desc">News, updates &amp; outreach posts</div>
+      </a>
+
+    </nav>
   </div>
-  <div class="footer-bottom">
-    <span>© <span id="footer-year"></span> Tony Di Fabbio — All rights reserved.</span>
-    <span class="eu-flag">
-      🇪🇺 Funded by the EU — MSCA Grant Agreement No. 101206371
-    </span>
-  </div>
+</main>
+
+<!-- Landing footer -->
+<footer class="landing-footer">
+  © <span id="footer-year"></span> Tony Di Fabbio &nbsp;·&nbsp; 🇪🇺 EU Horizon Europe MSCA Grant 101206371
 </footer>
 
 <script src="js/main.js"></script>
