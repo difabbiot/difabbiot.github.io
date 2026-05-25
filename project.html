@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LINERFUN Project | Tony Di Fabbio</title>
+  <meta name="description" content="LINERFUN: Physics-informed Time-Domain Impedance Boundary Conditions for Scale-Resolving Simulations of Acoustic Liners in UHBR Engines. MSCA Global Fellowship, Grant 101206371.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="eu-banner">
+  This project has received funding from the European Union's Horizon Europe research and innovation programme under the Marie Skłodowska-Curie Actions Grant Agreement No. <strong>101206371</strong>.
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Tony Di Fabbio &nbsp;<span>·</span>&nbsp; LINERFUN</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="project.html">Project</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="news.html">News</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="container">
+    <div class="section-label">MSCA Global Fellowship · Grant 101206371</div>
+    <h1>LINERFUN</h1>
+    <p>Physics-informed Time-Domain Impedance Boundary Conditions for<br>Scale-Resolving Simulations of Acoustic Liners in UHBR Engines</p>
+  </div>
+</header>
+
+<!-- Overview -->
+<section>
+  <div class="container">
+    <div class="project-meta" style="margin-bottom:2rem;">
+      <span class="badge badge-blue">MSCA Global Fellowship</span>
+      <span class="badge badge-green">Grant 101206371</span>
+      <span class="badge badge-amber">May 2026 – May 2029 (36 months)</span>
+      <span class="badge badge-gray">€309,153.72</span>
+      <span class="badge badge-gray">Horizon Europe</span>
+    </div>
+
+    <div class="section-label">Background &amp; Motivation</div>
+    <h2>Why Acoustic Liners?</h2>
+    <p>
+      Aviation noise is a major environmental concern near airports. Acoustic liners — arrays
+      of resonant cavities bonded to the inner walls of turbofan nacelles — are the most
+      effective passive technology for attenuating engine noise. As turbofan designs evolve
+      towards <strong>Ultra-High Bypass Ratio (UHBR)</strong> architectures, shorter and wider
+      nacelles shrink the available liner surface area, placing greater demand on liner efficiency
+      per unit area.
+    </p>
+    <p>
+      Designing optimal liners requires accurate prediction of sound absorption in the presence
+      of grazing flow — a coupled aeroacoustic problem. Current industrial tools rely on
+      simplified frequency-domain methods that fail to capture non-linear and transient effects.
+      High-fidelity <strong>scale-resolving CFD/CAA</strong> methods offer much higher accuracy
+      but lack robust, physically consistent boundary conditions for liner surfaces.
+    </p>
+
+    <div class="section-label" style="margin-top:3rem;">The LINERFUN Approach</div>
+    <h2>piTDIBC Methodology</h2>
+    <p>
+      LINERFUN develops <strong>physics-informed Time-Domain Impedance Boundary Conditions (piTDIBC)</strong>:
+      a new class of boundary conditions that embed acoustic liner physics directly into
+      scale-resolving CFD/CAA solvers. The method combines:
+    </p>
+
+    <div class="research-grid">
+      <div class="research-card">
+        <h4>Time-Domain Impedance Models</h4>
+        <p>
+          Causality-consistent impedance formulations (based on the Shur et al. framework)
+          that support broadband liner responses across realistic operating conditions.
+        </p>
+      </div>
+      <div class="research-card">
+        <h4>Scale-Resolving Simulations</h4>
+        <p>
+          Large Eddy Simulation (LES) and Scale-Adaptive Simulation (SAS) on HPC platforms
+          (CINECA LEONARDO, NCI Australia) for high-fidelity flow–acoustics coupling.
+        </p>
+      </div>
+      <div class="research-card">
+        <h4>Physics-Informed Machine Learning</h4>
+        <p>
+          Data-driven techniques to extend impedance models and accelerate parameter
+          optimisation, informed by physical constraints from acoustic theory.
+        </p>
+      </div>
+      <div class="research-card">
+        <h4>Validation Hierarchy</h4>
+        <p>
+          Progressive validation from 1D analytical benchmarks (Casadei 2020) to
+          NASA GIT duct experiments and the LINING test case (Paduano et al. 2024).
+        </p>
+      </div>
+    </div>
+
+    <div class="section-label" style="margin-top:3rem;">Objectives</div>
+    <h2>Scientific Goals</h2>
+    <p>
+      LINERFUN is structured around three interconnected objectives:
+    </p>
+    <div class="timeline" style="margin-top:1.5rem;">
+      <div class="timeline-item">
+        <div class="timeline-date">Objective 1 — TDIBC Development</div>
+        <h3>Robust piTDIBC formulation for scale-resolving solvers</h3>
+        <p>Derive causality-compliant, numerically stable time-domain impedance models
+           compatible with compressible LES/SAS solvers. Validate against benchmark test cases.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Objective 2 — Physics-Informed Learning</div>
+        <h3>Data-driven extension and calibration of impedance models</h3>
+        <p>Use physics-constrained machine learning to enrich impedance models with
+           non-linear effects and extend their validity to UHBR operating conditions.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Objective 3 — Application</div>
+        <h3>Liner design for UHBR nacelles</h3>
+        <p>Apply the developed framework to realistic UHBR liner geometries, generating
+           guidelines and design tools transferable to industrial partners.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Partners -->
+<section>
+  <div class="container">
+    <div class="section-label">Consortium</div>
+    <h2>Partner Institutions</h2>
+    <div class="partners-grid">
+      <div class="partner-card">
+        <div class="partner-role">Beneficiary · M1–6 &amp; M31–36</div>
+        <h4>Politecnico di Torino</h4>
+        <p>Dept. of Mechanical and Aerospace Engineering (DIMEAS)</p>
+        <p style="margin-top:0.5rem; font-size:0.82rem;"><strong>Supervisor:</strong> Prof. Francesco Avallone</p>
+        <p style="font-size:0.82rem;">Turin, Italy</p>
+      </div>
+      <div class="partner-card">
+        <div class="partner-role">Outgoing Host · M7–30</div>
+        <h4>University of Melbourne</h4>
+        <p>School of Mechanical Engineering</p>
+        <p style="margin-top:0.5rem; font-size:0.82rem;"><strong>Supervisor:</strong> Prof. Richard Sandberg</p>
+        <p style="font-size:0.82rem;">Melbourne, Australia</p>
+      </div>
+      <div class="partner-card">
+        <div class="partner-role">Secondment</div>
+        <h4>ONERA</h4>
+        <p>The French Aerospace Lab — Branch B2A</p>
+        <p style="margin-top:0.5rem; font-size:0.82rem;"><strong>Supervisor:</strong> Dr. Estelle Piot</p>
+        <p style="font-size:0.82rem;">Toulouse, France</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Project Timeline -->
+<section>
+  <div class="container">
+    <div class="section-label">Schedule</div>
+    <h2>Project Timeline</h2>
+    <div class="timeline" style="margin-top:1.5rem;">
+      <div class="timeline-item">
+        <div class="timeline-date">M1–6 · May–Oct 2026 · POLITO (Incoming)</div>
+        <h3>Phase 1 — Foundation</h3>
+        <p>Deliverables: DMP (D1.1), RMP (D1.2), FMP (D1.3), CDP (D5.1), DECP (D6.1). Literature review, TDIBC baseline implementation, HPC platform setup, CINECA LEONARDO proposal.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">M7–30 · Nov 2026 – Oct 2028 · UOM (Outgoing)</div>
+        <h3>Phase 2 — Core Research</h3>
+        <p>TDIBC development and validation. Scale-resolving simulations of liner test cases. Physics-informed ML extension. Collaboration with ONERA TDIBC team.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">M31–36 · Nov 2028 – Apr 2029 · POLITO (Return)</div>
+        <h3>Phase 3 — Application &amp; Dissemination</h3>
+        <p>UHBR liner design studies. Dissemination activities, workshops, open-data packages. Final reporting to REA.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Acknowledgment -->
+<section style="background:#f0f4ff; padding:3rem 0;">
+  <div class="container" style="text-align:center; max-width:680px;">
+    <div class="eu-flag" style="justify-content:center; font-size:1rem; color:#1e3a5f; margin-bottom:0.75rem;">🇪🇺 EU Acknowledgment</div>
+    <p style="color:#374151;">
+      This project has received funding from the European Union's Horizon Europe research and
+      innovation programme under the Marie Skłodowska-Curie Actions (MSCA) Global Postdoctoral
+      Fellowship, Grant Agreement No. <strong>101206371</strong>. Views and opinions expressed
+      are those of the author only and do not necessarily reflect those of the European Union or
+      the European Research Executive Agency (REA).
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>Tony Di Fabbio</h4>
+      <p>MSCA Global Postdoctoral Fellow</p>
+      <p>Politecnico di Torino</p>
+    </div>
+    <div class="footer-col">
+      <h4>Links</h4>
+      <a href="index.html">Home</a>
+      <a href="research.html">Publications</a>
+      <a href="about.html">About &amp; CV</a>
+      <a href="news.html">News</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="mailto:tonydifabbio@gmail.com">tonydifabbio@gmail.com</a>
+      <a href="https://twitter.com/tonydifabbio" target="_blank">@tonydifabbio</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="footer-year"></span> Tony Di Fabbio</span>
+    <span class="eu-flag">🇪🇺 MSCA Grant Agreement No. 101206371</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
