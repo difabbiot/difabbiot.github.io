@@ -4,9 +4,95 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Research — Tony Di Fabbio</title>
-  <meta name="description" content="Publications, awards and funding by Tony Di Fabbio — aeroacoustics, computational fluid dynamics, turbulence modelling.">
+  <meta name="description" content="Research expertise, publications, awards and funding by Tony Di Fabbio — aeroacoustics, machine learning for CFD, scale-resolving simulations, vortex aerodynamics.">
   <link rel="stylesheet" href="css/style.css">
   <style>
+
+    /* ── Expertise cards ── */
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .85rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 520px) { .expertise-grid { grid-template-columns: 1fr; } }
+
+    .exp-card {
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.1rem 1.15rem;
+      display: flex;
+      flex-direction: column;
+      gap: .45rem;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .exp-card:hover {
+      border-color: #9ca3af;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,.06);
+    }
+    .exp-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.05rem;
+      flex-shrink: 0;
+    }
+    .exp-title {
+      font-size: .92rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.25;
+    }
+    .exp-desc {
+      font-size: .81rem;
+      color: #4b5563;
+      line-height: 1.58;
+    }
+    .exp-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .28rem;
+      margin-top: .15rem;
+    }
+    .exp-tool {
+      font-size: .67rem;
+      font-weight: 600;
+      padding: .1rem .42rem;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: var(--bg);
+      white-space: nowrap;
+    }
+    .exp-pubs {
+      margin-top: .4rem;
+      padding-top: .4rem;
+      border-top: 1px solid var(--border);
+    }
+    .exp-pubs-label {
+      font-size: .65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--subtle);
+      margin-bottom: .25rem;
+    }
+    .exp-pubs a {
+      display: block;
+      font-size: .74rem;
+      color: var(--blue);
+      line-height: 1.45;
+      margin-bottom: .12rem;
+      text-decoration: none;
+    }
+    .exp-pubs a:hover { text-decoration: underline; }
+
+    /* ── Publication list ── */
     .pub-doi {
       font-size: .78rem;
       margin-top: .3rem;
@@ -19,7 +105,7 @@
     }
     .pub-doi a:hover { text-decoration: underline; }
 
-    /* Awards table-style list */
+    /* ── Awards table ── */
     .award-table {
       width: 100%;
       border-collapse: collapse;
@@ -82,48 +168,153 @@
 
   <header class="page-hero">
     <h1>Research</h1>
-    <p>Publications, awards &amp; funding</p>
+    <p>Expertise, publications, awards &amp; funding</p>
   </header>
+
+  <!-- ── EXPERTISE ── -->
+  <div class="section">
+    <div class="section-title">Areas of expertise</div>
+    <p style="font-size:.85rem;color:#4b5563;margin-bottom:1.1rem;">
+      My research sits at the intersection of high-fidelity fluid simulation and data-driven modelling, applied to turbulent flows in aerospace engineering. Below are the four main areas where I can contribute to research projects, collaborations, or consultancy engagements.
+    </p>
+
+    <div class="expertise-grid">
+
+      <!-- Card 1: ML for turbulence -->
+      <div class="exp-card">
+        <div class="exp-icon" style="background:#dbeafe;">🤖</div>
+        <div class="exp-title">Machine learning for turbulence modelling</div>
+        <div class="exp-desc">
+          Standard engineering simulations use simplified turbulence models that often fail in complex flows. I develop methods to make these models smarter by embedding corrections learned from high-fidelity data — using techniques such as gene expression programming and field inversion — without sacrificing computational speed.
+        </div>
+        <div class="exp-tools">
+          <span class="exp-tool">Gene Expression Programming</span>
+          <span class="exp-tool">Field Inversion</span>
+          <span class="exp-tool">Spalart–Allmaras model</span>
+          <span class="exp-tool">OpenFOAM</span>
+          <span class="exp-tool">EVE3</span>
+          <span class="exp-tool">Python</span>
+        </div>
+        <div class="exp-pubs">
+          <div class="exp-pubs-label">Related publications</div>
+          <a href="#pub-fluids24">Strategies for Enhancing One-Equation Turbulence Model Predictions Using GEP — <em>Fluids</em>, 2024</a>
+          <a href="#pub-aiaa26">Enhancing one-equation turbulence model for delta wing flows by GEP — <em>AIAA Journal</em>, 2026</a>
+          <a href="#pub-dglr25">ML-augmented one-equation turbulence model in open-source framework — <em>DGLR</em>, 2025</a>
+          <a href="#pub-ofw25a">Towards a generalized open-source turbulence model — <em>OpenFOAM Workshop</em>, 2025</a>
+        </div>
+      </div>
+
+      <!-- Card 2: Scale-resolving simulations -->
+      <div class="exp-card">
+        <div class="exp-icon" style="background:#f3e8ff;">🌀</div>
+        <div class="exp-title">Scale-resolving simulations of turbulent flows</div>
+        <div class="exp-desc">
+          When engineering accuracy is not enough, high-fidelity methods that resolve the turbulent motion directly are required. I have designed and run large-eddy simulations (LES) and scale-adaptive simulations (SAS) of aerodynamically complex configurations, including on GPU-accelerated supercomputers and national HPC facilities.
+        </div>
+        <div class="exp-tools">
+          <span class="exp-tool">Large-Eddy Simulation</span>
+          <span class="exp-tool">Scale-Adaptive Simulation</span>
+          <span class="exp-tool">HiPSTAR</span>
+          <span class="exp-tool">OpenFOAM</span>
+          <span class="exp-tool">GPU computing</span>
+          <span class="exp-tool">SuperMUC-NG</span>
+        </div>
+        <div class="exp-pubs">
+          <div class="exp-pubs-label">Related publications</div>
+          <a href="#pub-aiaa-ceas26">GPU-Accelerated LES of High-Speed Cavity Flows — <em>AIAA/CEAS Aeroacoustics</em>, 2026</a>
+          <a href="#pub-icas22">Leading-edge vortices on a triple-delta wing using SAS — <em>ICAS Congress</em>, 2022</a>
+          <a href="#pub-dglr20">Comparative scale-resolving and RANS simulations — <em>DGLR</em>, 2020</a>
+        </div>
+      </div>
+
+      <!-- Card 3: Aeroacoustics & liners -->
+      <div class="exp-card">
+        <div class="exp-icon" style="background:#fef3c7;">🔊</div>
+        <div class="exp-title">Aeroacoustics &amp; acoustic liner modelling</div>
+        <div class="exp-desc">
+          Aircraft engine noise is increasingly regulated, and acoustic liners are one of the primary tools to control it. My current MSCA research (LINERFUN) develops physics-informed time-domain impedance boundary conditions (piTDIBC) that allow accurate simulation of liner performance under realistic turbulent flow — a capability missing from current industrial design workflows.
+        </div>
+        <div class="exp-tools">
+          <span class="exp-tool">piTDIBC</span>
+          <span class="exp-tool">Impedance boundary conditions</span>
+          <span class="exp-tool">CAA / CFD coupling</span>
+          <span class="exp-tool">HiPSTAR</span>
+          <span class="exp-tool">UHBR engines</span>
+          <span class="exp-tool">Liner design</span>
+        </div>
+        <div class="exp-pubs">
+          <div class="exp-pubs-label">Related publications</div>
+          <a href="#pub-aiaa-ceas26">GPU-Accelerated LES of High-Speed Cavity Flows — <em>AIAA/CEAS Aeroacoustics</em>, 2026</a>
+          <a href="project.html">LINERFUN project (ongoing, 2025–2028) →</a>
+        </div>
+      </div>
+
+      <!-- Card 4: Vortex & high-speed aerodynamics -->
+      <div class="exp-card">
+        <div class="exp-icon" style="background:#dcfce7;">✈️</div>
+        <div class="exp-title">Vortex-dominated &amp; high-speed aerodynamics</div>
+        <div class="exp-desc">
+          My doctoral research focused on the flow physics over highly swept delta wings — configurations relevant to combat aircraft and future urban air mobility platforms — where strong leading-edge vortices dominate the aerodynamic behaviour and interact with shocks at transonic speeds. I characterised vortex breakdown mechanisms and contributed to the understanding of how standard CFD tools fail to capture them.
+        </div>
+        <div class="exp-tools">
+          <span class="exp-tool">RANS / hybrid RANS-LES</span>
+          <span class="exp-tool">Delta wing aerodynamics</span>
+          <span class="exp-tool">Vortex breakdown</span>
+          <span class="exp-tool">Transonic flow</span>
+          <span class="exp-tool">Shock–vortex interaction</span>
+          <span class="exp-tool">Wind tunnel validation</span>
+        </div>
+        <div class="exp-pubs">
+          <div class="exp-pubs-label">Related publications</div>
+          <a href="#pub-pof24">Physical aspects of vortex–shock dynamics — <em>Physics of Fluids</em>, 2024</a>
+          <a href="#pub-ast24">Towards understanding of vortex breakdown for RANS — <em>Aerospace Sci. & Tech.</em>, 2024</a>
+          <a href="#pub-aj23">Analysis of vortex-dominated flow over a delta wing — <em>The Aeronautical Journal</em>, 2023</a>
+          <a href="#pub-ceas22">Transonic aerodynamics on a triple-delta wing in sideslip — <em>CEAS Aeronautical Journal</em>, 2022</a>
+        </div>
+      </div>
+
+    </div><!-- /expertise-grid -->
+  </div>
 
   <!-- ── JOURNAL ARTICLES ── -->
   <div class="section">
     <div class="section-title">Journal Articles</div>
 
-    <div class="pub">
+    <div class="pub" id="pub-aiaa26">
       <div class="pub-title">Enhancing one-equation turbulence model for delta wing flows by gene expression programming</div>
       <div class="pub-authors">D. Kotlzowski, <strong>T. Di Fabbio</strong>, E. Tangermann, M. Klein, Y. Fang, R. D. Sandberg</div>
       <div class="pub-venue">AIAA Journal, 2026</div>
     </div>
 
-    <div class="pub">
+    <div class="pub" id="pub-fluids24">
       <div class="pub-title">Strategies for Enhancing One-Equation Turbulence Model Predictions Using Gene-Expression Programming</div>
       <div class="pub-authors"><strong>T. Di Fabbio</strong>, E. Tangermann, M. Klein, Y. Fang, R. D. Sandberg</div>
       <div class="pub-venue">Fluids, 2024, 9(8)</div>
       <div class="pub-doi"><a href="https://doi.org/10.3390/fluids9080191" target="_blank" rel="noopener">doi: 10.3390/fluids9080191</a></div>
     </div>
 
-    <div class="pub">
+    <div class="pub" id="pub-pof24">
       <div class="pub-title">Physical aspects of vortex–shock dynamics in delta wing configurations</div>
       <div class="pub-authors">K. Rajkumar, <strong>T. Di Fabbio</strong>, E. Tangermann, M. Klein</div>
       <div class="pub-venue">Physics of Fluids, 2024</div>
       <div class="pub-doi"><a href="https://doi.org/10.1063/5.0213122" target="_blank" rel="noopener">doi: 10.1063/5.0213122</a></div>
     </div>
 
-    <div class="pub">
+    <div class="pub" id="pub-ast24">
       <div class="pub-title">Towards the understanding of vortex breakdown for improved RANS turbulence modelling</div>
       <div class="pub-authors"><strong>T. Di Fabbio</strong>, K. Rajkumar, E. Tangermann, M. Klein</div>
       <div class="pub-venue">Aerospace Science and Technology, 2024</div>
       <div class="pub-doi"><a href="https://doi.org/10.1016/j.ast.2024.108973" target="_blank" rel="noopener">doi: 10.1016/j.ast.2024.108973</a></div>
     </div>
 
-    <div class="pub">
+    <div class="pub" id="pub-aj23">
       <div class="pub-title">Analysis of the vortex-dominated flow field over a delta wing at transonic speed</div>
       <div class="pub-authors"><strong>T. Di Fabbio</strong>, E. Tangermann, M. Klein</div>
       <div class="pub-venue">The Aeronautical Journal, 2023</div>
       <div class="pub-doi"><a href="https://doi.org/10.1017/aer.2023.30" target="_blank" rel="noopener">doi: 10.1017/aer.2023.30</a></div>
     </div>
 
-    <div class="pub">
+    <div class="pub" id="pub-ceas22">
       <div class="pub-title">Investigation of transonic aerodynamics on a triple-delta wing in sideslip conditions</div>
       <div class="pub-authors"><strong>T. Di Fabbio</strong>, E. Tangermann, M. Klein</div>
       <div class="pub-venue">CEAS Aeronautical Journal, 2022</div>
@@ -136,56 +327,56 @@
   <div class="section">
     <div class="section-title">Conference Proceedings</div>
 
-    <div class="pub">
+    <div class="pub" id="pub-aiaa-ceas26">
       <div class="pub-title">GPU-Accelerated Large-Eddy Simulations of High-Speed Cavity Flows With Dynamic Doors Deployment</div>
       <div class="pub-authors">G. A. Bres, C. B. Ivey, L. Heidt, K. Wang, S. T. Bose, R. Hottois, J. Guerrero, <strong>T. Di Fabbio</strong></div>
       <div class="pub-venue">32nd AIAA/CEAS Aeroacoustics Conference, 2026</div>
     </div>
 
-    <div class="pub">
+    <div class="pub" id="pub-ofw25a">
       <div class="pub-title">Towards a generalized open-source turbulence model for external aerodynamics</div>
       <div class="pub-authors">E. Segalerba, <strong>T. Di Fabbio</strong>, V. Rossano, J. Guerrero</div>
       <div class="pub-venue">20th OpenFOAM Workshop, Vienna, 2025</div>
     </div>
 
-    <div class="pub">
+    <div class="pub" id="pub-ofw25b">
       <div class="pub-title">Verification and Validation of OpenFOAM for High-Speed Aerodynamics</div>
       <div class="pub-authors">V. Rossano, <strong>T. Di Fabbio</strong>, E. Segalerba, J. Guerrero</div>
       <div class="pub-venue">20th OpenFOAM Workshop, Vienna, 2025</div>
     </div>
 
-    <div class="pub">
+    <div class="pub" id="pub-emw25">
       <div class="pub-title">Optimization of Hypersonic Re-Entry Vehicle Aerodynamics for Communication Blackout Mitigation</div>
       <div class="pub-authors">G. Zampa, <strong>T. Di Fabbio</strong>, E. Segalerba, J. Guerrero</div>
       <div class="pub-venue">European Microwave Week, Utrecht, 2025</div>
     </div>
 
-    <div class="pub">
+    <div class="pub" id="pub-dglr25">
       <div class="pub-title">Towards a machine learning-augmented one-equation turbulence model for external aerodynamics in an open-source framework</div>
       <div class="pub-authors"><strong>T. Di Fabbio</strong>, E. Segalerba, E. Tangermann, M. Klein</div>
       <div class="pub-venue">DGLR Conference, Augsburg, 2025</div>
     </div>
 
-    <div class="pub">
+    <div class="pub" id="pub-scitech22">
       <div class="pub-title">Flow pattern analysis on a delta wing at transonic speed</div>
       <div class="pub-authors"><strong>T. Di Fabbio</strong>, E. Tangermann, M. Klein</div>
       <div class="pub-venue">AIAA SciTech Forum, San Diego, 2022</div>
       <div class="pub-doi"><a href="https://doi.org/10.2514/6.2022-1204" target="_blank" rel="noopener">doi: 10.2514/6.2022-1204</a></div>
     </div>
 
-    <div class="pub">
+    <div class="pub" id="pub-icas22">
       <div class="pub-title">Investigation of leading-edge vortices on a triple-delta-wing configuration using scale-adaptive simulation</div>
       <div class="pub-authors"><strong>T. Di Fabbio</strong>, E. Tangermann, M. Klein</div>
       <div class="pub-venue">ICAS Congress, Stockholm, 2022</div>
     </div>
 
-    <div class="pub">
+    <div class="pub" id="pub-tsfp22">
       <div class="pub-title">Investigation of Reynolds stresses prior to vortex breakdown on a triple-delta wing at transonic condition</div>
       <div class="pub-authors"><strong>T. Di Fabbio</strong>, E. Tangermann, M. Klein</div>
       <div class="pub-venue">TSFP12, Osaka, 2022</div>
     </div>
 
-    <div class="pub">
+    <div class="pub" id="pub-dglr20">
       <div class="pub-title">Comparative scale-resolving and RANS simulations of a delta wing configuration</div>
       <div class="pub-authors"><strong>T. Di Fabbio</strong>, E. Tangermann, M. Klein, S. Ketterl, A. Winkler</div>
       <div class="pub-venue">DGLR Conference, Bonn, 2020</div>
