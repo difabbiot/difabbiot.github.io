@@ -4,8 +4,91 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LINERFUN — Tony Di Fabbio</title>
-  <meta name="description" content="LINERFUN — MSCA Global Fellowship by Tony Di Fabbio. Physics-informed acoustic liner research for UHBR aero-engines. Politecnico di Torino · University of Melbourne · ONERA.">
+  <meta name="description" content="LINERFUN — MSCA Global Fellowship by Tony Di Fabbio. Physics-informed acoustic liner research for next-generation aircraft engines. Politecnico di Torino · University of Melbourne · ONERA.">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── Landing-only overrides ── */
+    .splash { max-width: 560px; }
+
+    /* Project description box */
+    .splash-desc {
+      font-size: .88rem;
+      color: #374151;
+      line-height: 1.65;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: .9rem 1.1rem;
+      margin: 0 auto 2rem;
+      text-align: left;
+    }
+    .splash-desc strong { color: var(--navy); }
+
+    /* Institution logo strip */
+    .inst-logos {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1.5rem 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .inst-logo-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .45rem;
+      text-decoration: none;
+      transition: opacity .15s, transform .15s;
+    }
+    .inst-logo-link:hover { opacity: .8; transform: translateY(-2px); text-decoration: none; }
+    .inst-logo-link img {
+      height: 42px;
+      width: auto;
+      max-width: 120px;
+      object-fit: contain;
+      filter: grayscale(10%);
+    }
+    .inst-logo-link span {
+      font-size: .67rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-align: center;
+      letter-spacing: .01em;
+      line-height: 1.3;
+    }
+    .inst-msca-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .45rem;
+    }
+    .inst-msca-pill {
+      font-size: .78rem;
+      font-weight: 700;
+      color: #003399;
+      background: #eef2ff;
+      border: 1.5px solid #a5b4fc;
+      border-radius: 8px;
+      padding: .3rem .7rem;
+      letter-spacing: .02em;
+      white-space: nowrap;
+    }
+    .inst-msca-badge span:last-child {
+      font-size: .67rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* Divider */
+    .splash-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 1.75rem auto;
+      width: 60px;
+    }
+  </style>
 </head>
 <body class="landing-body">
 
@@ -18,42 +101,40 @@
 <main class="landing-main">
   <div class="splash">
 
-    <!-- Logo -->
+    <!-- Logo + title -->
     <img src="img/logo.svg" alt="LINERFUN logo" class="splash-logo">
-
-    <!-- Title -->
     <h1>LINERFUN</h1>
     <p class="splash-author">Tony Di Fabbio, Dr.-Ing.</p>
-    <p class="splash-tagline">
-      MSCA Global Postdoctoral Fellow · Acoustic liners for UHBR aero-engines ·
-      Physics-informed CFD/CAA · Politecnico di Torino
-    </p>
+    <p class="splash-tagline">MSCA Global Postdoctoral Fellow · Aeroacoustics &amp; Computational Fluid Dynamics</p>
 
-    <!-- Institution badges -->
-    <div class="inst-row">
+    <!-- One-paragraph project description -->
+    <div class="splash-desc">
+      <strong>What is LINERFUN?</strong> Aircraft engines generate most of their noise through turbulent airflow interacting with surfaces inside the engine nacelle. <em>Acoustic liners</em> — panels of tiny cavities lining the engine walls — absorb that noise. LINERFUN develops new physics-informed simulation methods to predict how well these liners work under realistic flow conditions, with the goal of helping engineers design quieter engines for the next generation of high-bypass turbofans.
+    </div>
 
-      <!-- POLITO -->
-      <a href="https://www.polito.it" target="_blank" rel="noopener" class="inst-badge inst-polito">
-        <img src="img/logo-polito.png" alt="" onerror="this.style.display='none'">
-        Politecnico di Torino
+    <hr class="splash-divider">
+
+    <!-- Institution logos (real images) -->
+    <div class="inst-logos">
+
+      <a href="https://www.dimeas.polito.it/" target="_blank" rel="noopener" class="inst-logo-link" title="Politecnico di Torino — DIMEAS (Italy)">
+        <img src="img/logoDIMEAS.jpg" alt="Politecnico di Torino — DIMEAS">
+        <span>Politecnico di Torino</span>
       </a>
 
-      <!-- UoM -->
-      <a href="https://www.unimelb.edu.au" target="_blank" rel="noopener" class="inst-badge inst-uom">
-        <img src="img/logo-uom.png" alt="" onerror="this.style.display='none'">
-        Univ. of Melbourne
+      <a href="https://energy.unimelb.edu.au/" target="_blank" rel="noopener" class="inst-logo-link" title="University of Melbourne — Energy Institute (Australia)">
+        <img src="img/logoUOM.png" alt="University of Melbourne">
+        <span>University of Melbourne</span>
       </a>
 
-      <!-- ONERA -->
-      <a href="https://www.onera.fr" target="_blank" rel="noopener" class="inst-badge inst-onera">
-        <img src="img/logo-onera.png" alt="" onerror="this.style.display='none'">
-        ONERA
+      <a href="https://www.onera.fr/en" target="_blank" rel="noopener" class="inst-logo-link" title="ONERA — The French Aerospace Lab (France)">
+        <img src="img/logoONERA.png" alt="ONERA">
+        <span>ONERA, Toulouse</span>
       </a>
 
-      <!-- MSCA -->
-      <a href="https://marie-sklodowska-curie-actions.ec.europa.eu" target="_blank" rel="noopener" class="inst-badge inst-msca">
-        <img src="img/logo-msca.png" alt="" onerror="this.style.display='none'">
-        🇪🇺 MSCA
+      <a href="https://marie-sklodowska-curie-actions.ec.europa.eu" target="_blank" rel="noopener" class="inst-logo-link" title="Marie Skłodowska-Curie Actions — EU Horizon Europe">
+        <img src="img/logoMSCA.png" alt="Marie Skłodowska-Curie Actions">
+        <span>EU Horizon Europe · MSCA</span>
       </a>
 
     </div>
@@ -68,7 +149,7 @@
           </svg>
         </div>
         <div class="nav-card-title">Project</div>
-        <div class="nav-card-desc">LINERFUN — objectives, methodology, status &amp; updates</div>
+        <div class="nav-card-desc">Objectives, methodology, current status &amp; updates</div>
       </a>
 
       <a href="about.html" class="nav-card">
@@ -78,7 +159,7 @@
           </svg>
         </div>
         <div class="nav-card-title">Bio</div>
-        <div class="nav-card-desc">Career, education, CV download</div>
+        <div class="nav-card-desc">Career history, education &amp; CV download</div>
       </a>
 
       <a href="research.html" class="nav-card">
@@ -88,7 +169,7 @@
           </svg>
         </div>
         <div class="nav-card-title">Research</div>
-        <div class="nav-card-desc">Publications, conferences &amp; awards</div>
+        <div class="nav-card-desc">Publications, conferences, awards &amp; funding</div>
       </a>
 
       <a href="blog.html" class="nav-card">
