@@ -38,7 +38,7 @@ Every page `<head>` carries: name-first `<title>`, meta description, canonical U
 
 ## Logo policy
 
-Only two institutional logos may be displayed: **MSCA** (`img/logoMSCA.png`) and **DIMEAS — Politecnico di Torino** (`img/logoDIMEAS.jpg`). There is **no permission** for University of Melbourne or ONERA logos — those partners are rendered as text wordmarks (`.inst-wordmark` + `.inst-uom`/`.inst-onera`) on the landing page. Never re-add their image logos.
+Only two institutional logos may be displayed: **MSCA** (`img/logoMSCA.png`) and **DIMEAS — Politecnico di Torino** (`img/logoDIMEAS.jpg`). There is **no permission** for University of Melbourne or ONERA logos — those partners are named as plain text links (`.inst-partners`, under the logo row on the landing page). Never re-add their image logos.
 
 ## EU acknowledgment requirement
 

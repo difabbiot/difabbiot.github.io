@@ -89,14 +89,14 @@
     }
     .splash-desc strong { color: var(--navy); }
 
-    /* Institution logo strip */
+    /* Institution logo strip (two logos only: DIMEAS + MSCA) */
     .inst-logos {
       display: flex;
       justify-content: center;
-      align-items: flex-end;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 1.5rem 2rem;
-      margin-bottom: 2.5rem;
+      gap: 1.5rem 3rem;
+      margin-bottom: 1.1rem;
     }
     .inst-logo-link {
       display: flex;
@@ -108,11 +108,10 @@
     }
     .inst-logo-link:hover { opacity: .8; transform: translateY(-2px); text-decoration: none; }
     .inst-logo-link img {
-      height: 42px;
+      height: 50px;
       width: auto;
-      max-width: 120px;
+      max-width: 180px;
       object-fit: contain;
-      filter: grayscale(10%);
     }
     .inst-logo-link span {
       font-size: .67rem;
@@ -122,22 +121,19 @@
       letter-spacing: .01em;
       line-height: 1.3;
     }
-    /* Text wordmarks for partners whose logos we cannot display */
-    .inst-wordmark {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 42px;
-      max-width: 140px;
-      padding: 0 .75rem;
-      border: 1.5px solid;
-      border-radius: 8px;
-      font-size: .74rem;
-      font-weight: 700;
-      line-height: 1.25;
-      letter-spacing: .01em;
-      text-align: center;
+    /* Partner institutions named in text (no logo permission) */
+    .inst-partners {
+      font-size: .78rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 2.25rem;
     }
+    .inst-partners a {
+      color: var(--muted);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .inst-partners a:hover { color: var(--navy); }
 
     /* Divider */
     .splash-divider {
@@ -174,31 +170,26 @@
 
     <hr class="splash-divider">
 
-    <!-- Host institutions — only MSCA and DIMEAS logos may be displayed;
-         UoM and ONERA are shown as text wordmarks (no logo permission) -->
+    <!-- Host institution + funding logos — only MSCA and DIMEAS logos may be
+         displayed; UoM and ONERA are named in text below (no logo permission) -->
     <div class="inst-logos">
 
       <a href="https://www.dimeas.polito.it/" target="_blank" rel="noopener" class="inst-logo-link" title="DIMEAS — Politecnico di Torino (Italy)">
         <img src="img/logoDIMEAS.jpg" alt="DIMEAS — Politecnico di Torino" loading="lazy">
-        <span>Politecnico di Torino</span>
-      </a>
-
-      <a href="https://energy.unimelb.edu.au/" target="_blank" rel="noopener" class="inst-logo-link" title="University of Melbourne (Australia)">
-        <span class="inst-wordmark inst-uom">University of Melbourne</span>
-        <span>Melbourne, Australia</span>
-      </a>
-
-      <a href="https://www.onera.fr/en" target="_blank" rel="noopener" class="inst-logo-link" title="ONERA — The French Aerospace Lab (France)">
-        <span class="inst-wordmark inst-onera">ONERA</span>
-        <span>Toulouse, France</span>
+        <span>Politecnico di Torino · DIMEAS</span>
       </a>
 
       <a href="https://marie-sklodowska-curie-actions.ec.europa.eu" target="_blank" rel="noopener" class="inst-logo-link" title="Marie Skłodowska-Curie Actions — EU Horizon Europe">
-        <img src="img/logoMSCA.png" alt="Marie Skłodowska-Curie Actions" loading="lazy">
+        <img src="img/logoMSCA.png" alt="Marie Skłodowska-Curie Actions — EU Horizon Europe" loading="lazy">
         <span>EU Horizon Europe · MSCA</span>
       </a>
 
     </div>
+
+    <p class="inst-partners">
+      In partnership with <a href="https://www.onera.fr/en" target="_blank" rel="noopener">ONERA — The French Aerospace Lab</a><br>
+      and the <a href="https://energy.unimelb.edu.au/" target="_blank" rel="noopener">University of Melbourne</a>
+    </p>
 
     <!-- Key stats strip -->
     <div class="splash-stats">

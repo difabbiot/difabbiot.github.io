@@ -38,7 +38,7 @@ GitHub Pages from the `main` branch, root `/`. Push to `main` and the site updat
 
 ## Logo policy
 
-Only two institutional logos may be displayed: **MSCA / EU** (`img/logoMSCA.png`) and **DIMEAS — Politecnico di Torino** (`img/logoDIMEAS.jpg`). There is **no permission** to use the University of Melbourne or ONERA logos — those partners appear as text wordmarks (`.inst-wordmark`) on the landing page. Do not re-add their image logos.
+Only two institutional logos may be displayed: **MSCA / EU** (`img/logoMSCA.png`) and **DIMEAS — Politecnico di Torino** (`img/logoDIMEAS.jpg`). There is **no permission** to use the University of Melbourne or ONERA logos — those partners are named as plain text links (`.inst-partners`) under the logo row on the landing page. Do not re-add their image logos.
 
 ## EU acknowledgment
 

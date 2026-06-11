@@ -107,12 +107,6 @@ a:hover { text-decoration: underline; }
   margin: 0 auto 2rem;
 }
 
-/* Institution colour variants (used by landing wordmarks) */
-.inst-polito  { color: #003087; border-color: #003087; background: #f0f4ff; }
-.inst-uom     { color: #00285e; border-color: #00285e; background: #f0f5ff; }
-.inst-onera   { color: #c1121f; border-color: #c1121f; background: #fff1f2; }
-.inst-msca    { color: #003399; border-color: #003399; background: #eef2ff; }
-
 /* Nav grid */
 .nav-grid {
   display: grid;
