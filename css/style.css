@@ -107,45 +107,11 @@ a:hover { text-decoration: underline; }
   margin: 0 auto 2rem;
 }
 
-/* Institution badges */
-.inst-row {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 2.5rem;
-}
-
-.inst-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 0.3rem 0.75rem;
-  border-radius: 100px;
-  border: 1.5px solid;
-  transition: all 0.15s;
-  cursor: default;
-  text-decoration: none;
-}
-.inst-badge:hover { text-decoration: none; transform: translateY(-1px); }
-
-/* Try to show logo image; fallback = hidden, badge still shows text */
-.inst-badge img {
-  height: 16px;
-  width: auto;
-  display: block;
-}
-
+/* Institution colour variants (used by landing wordmarks) */
 .inst-polito  { color: #003087; border-color: #003087; background: #f0f4ff; }
-.inst-polito:hover { background: #e0e8ff; }
 .inst-uom     { color: #00285e; border-color: #00285e; background: #f0f5ff; }
-.inst-uom:hover { background: #e0ecff; }
 .inst-onera   { color: #c1121f; border-color: #c1121f; background: #fff1f2; }
-.inst-onera:hover { background: #ffe4e6; }
 .inst-msca    { color: #003399; border-color: #003399; background: #eef2ff; }
-.inst-msca:hover { background: #e0e8ff; }
 
 /* Nav grid */
 .nav-grid {
@@ -266,6 +232,53 @@ nav {
   color: var(--navy);
   background: var(--bg-soft);
   text-decoration: none;
+}
+
+/* Skip-to-content link (visible only when focused) */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 200;
+  background: var(--navy);
+  color: #fff;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.8rem;
+  border-radius: 0 0 var(--radius) 0;
+}
+.skip-link:focus { left: 0; }
+
+/* Mobile nav toggle */
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 0;
+  padding: 0.35rem;
+  border-radius: 6px;
+  color: var(--navy);
+  cursor: pointer;
+}
+.nav-toggle:hover { background: var(--bg-soft); }
+
+@media (max-width: 520px) {
+  .nav-toggle { display: flex; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 52px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0.15rem;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+    padding: 0.5rem 1.25rem 0.75rem;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { display: block; padding: 0.45rem 0.6rem; }
 }
 
 /* Page header */
@@ -439,4 +452,83 @@ footer {
   .tl-item { grid-template-columns: 1fr; gap: 0.15rem; }
   .bio-hero { flex-direction: column; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
+}
+
+/* ============================================================
+   ENHANCEMENTS
+   ============================================================ */
+
+/* Subtle gradient on inner page heroes */
+.page-hero { background: linear-gradient(175deg, #ecf3ff 0%, var(--bg) 65%); }
+
+/* Left accent bar on section titles */
+.section-title { padding-left: .6rem; border-left: 3px solid var(--blue); }
+
+/* ── Landing stats strip ── */
+.splash-stats {
+  display: flex;
+  justify-content: center;
+  gap: 0 2.25rem;
+  flex-wrap: wrap;
+  padding: .9rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+.splash-stat { text-align: center; padding: .3rem .4rem; }
+.splash-stat-num {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: .12rem;
+}
+.splash-stat-label {
+  display: block;
+  font-size: .62rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--muted);
+}
+
+/* ── Nav card colour accents (landing page) ── */
+.nav-card.card-project { border-top: 3px solid #2563eb; }
+.nav-card.card-bio     { border-top: 3px solid #16a34a; }
+.nav-card.card-research{ border-top: 3px solid #7c3aed; }
+.nav-card.card-blog    { border-top: 3px solid #d97706; }
+
+/* ── Academic profile link colour variants ── */
+.hero-link.scholar { color: #1a56db; border-color: #93c5fd; }
+.hero-link.scholar:hover { background: #eff4ff; border-color: #3b82f6; color: #1a56db; text-decoration: none; }
+.hero-link.orcid   { color: #4a7c00; border-color: #a3e635; }
+.hero-link.orcid:hover { background: #f7fee7; border-color: #65a30d; color: #4a7c00; text-decoration: none; }
+.hero-link.rg      { color: #0f766e; border-color: #5eead4; }
+.hero-link.rg:hover { background: #f0fdfa; border-color: #14b8a6; color: #0f766e; text-decoration: none; }
+
+/* ── Pulsing live dot on project status pill ── */
+@keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
+.pill-dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  background: #16a34a;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: .3rem;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* ── Blog highlight callout box ── */
+.post-highlight {
+  background: var(--blue-lt);
+  border-left: 3px solid var(--blue);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: .6rem 1rem;
+  margin: .7rem 0;
+  color: var(--navy);
+  font-size: .86rem;
+  line-height: 1.6;
+  font-style: italic;
 }

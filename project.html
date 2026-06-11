@@ -3,8 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project — LINERFUN</title>
-  <meta name="description" content="LINERFUN: developing better tools to design quieter aircraft engines. An EU-funded Marie Skłodowska-Curie research project. Grant 101206371.">
+  <title>LINERFUN — Quieter Aircraft Engines | Tony Di Fabbio</title>
+  <meta name="description" content="LINERFUN (MSCA Grant 101206371): physics-informed impedance boundary conditions to simulate acoustic liners for quieter next-generation UHBR aircraft engines.">
+  <meta name="author" content="Tony Di Fabbio">
+  <meta name="theme-color" content="#1e3a5f">
+  <link rel="canonical" href="https://difabbiot.github.io/project.html">
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tony Di Fabbio — LINERFUN">
+  <meta property="og:title" content="LINERFUN — Quieter Aircraft Engines">
+  <meta property="og:description" content="An EU Marie Skłodowska-Curie project developing physics-informed simulation tools for acoustic liners in next-generation aircraft engines.">
+  <meta property="og:url" content="https://difabbiot.github.io/project.html">
+  <meta property="og:image" content="https://difabbiot.github.io/img/tony.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@tdf_95">
+
+  <!-- Structured data: research project -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ResearchProject",
+    "@id": "https://difabbiot.github.io/project.html#project",
+    "name": "LINERFUN",
+    "url": "https://difabbiot.github.io/project.html",
+    "description": "LINERFUN develops physics-informed time-domain impedance boundary conditions for the accurate simulation of acoustic liners in next-generation UHBR aircraft engines.",
+    "startDate": "2026-05-01",
+    "endDate": "2029-04-30",
+    "member": {
+      "@type": "Person",
+      "@id": "https://difabbiot.github.io/#person",
+      "name": "Tony Di Fabbio",
+      "url": "https://difabbiot.github.io/"
+    },
+    "funding": {
+      "@type": "Grant",
+      "identifier": "101206371",
+      "name": "Marie Skłodowska-Curie Actions Global Postdoctoral Fellowship",
+      "funder": {
+        "@type": "Organization",
+        "name": "European Union — Horizon Europe",
+        "url": "https://marie-sklodowska-curie-actions.ec.europa.eu"
+      }
+    }
+  }
+  </script>
+
   <link rel="stylesheet" href="css/style.css">
   <style>
     /* ---- Status / Progress ---- */
@@ -103,6 +148,8 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <div class="eu-banner">
   Funded by the EU Horizon Europe — Marie Skłodowska-Curie Actions, Grant Agreement No. <strong>101206371</strong>
 </div>
@@ -119,16 +166,19 @@
       <li><a href="research.html">Research</a></li>
       <li><a href="blog.html">Blog</a></li>
     </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </button>
   </div>
 </nav>
 
-<div class="col">
+<main class="col" id="main">
 
   <header class="page-hero">
     <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.75rem;">
       <span class="post-tag tag-msca">MSCA Global Fellowship</span>
       <span class="post-tag" style="background:#e5e7eb;color:#374151;font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:100px;">Grant 101206371</span>
-      <span class="post-tag" style="background:#fef3c7;color:#92400e;font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:100px;">May 2026 – May 2029</span>
+      <span class="post-tag" style="background:#fef3c7;color:#92400e;font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:100px;">May 2026 – April 2029</span>
     </div>
     <h1>LINERFUN</h1>
     <p>Making jet engines quieter — a three-year European research fellowship</p>
@@ -160,7 +210,7 @@
       </div>
 
       <div class="status-pills">
-        <span class="status-pill pill-active">● Active — M1</span>
+        <span class="status-pill pill-active"><span class="pill-dot"></span>Active — M1</span>
         <span class="status-pill pill-next">ONERA secondment — from M4</span>
         <span class="status-pill pill-next">Melbourne outgoing phase — from M8</span>
       </div>
@@ -251,7 +301,7 @@
     </p>
   </div>
 
-</div><!-- /col -->
+</main><!-- /col -->
 
 <footer>
   <div class="footer-inner">

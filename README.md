@@ -1,84 +1,50 @@
 # Tony Di Fabbio — Personal & LINERFUN Project Website
 
-Personal academic website and project communication hub for the **LINERFUN** MSCA Global Fellowship (Grant 101206371).
+Personal academic website and dissemination hub for the **LINERFUN** MSCA Global Fellowship (Grant 101206371).
+
+**Live site:** https://difabbiot.github.io/
 
 ## Structure
 
 ```
 website/
-├── index.html        Homepage — LINERFUN spotlight + quick nav
-├── project.html      LINERFUN project detail page
-├── research.html     Publications & research areas
-├── about.html        Biography, experience, education, awards
-├── news.html         News/blog for CDEP activities
-├── css/
-│   └── style.css     All styles (no frameworks, no build tools)
-├── js/
-│   └── main.js       Minimal JS (active nav, mobile menu, footer year)
-└── README.md         This file
+├── index.html        Landing — LINERFUN splash + quick nav
+├── project.html      LINERFUN project detail (status bar, objectives, partners)
+├── about.html        Biography, experience, education, skills, CV
+├── research.html     Expertise, publications, awards & funding
+├── blog.html         Blog / news feed (CDEP dissemination)
+├── news.html         Legacy URL — instant redirect to blog.html
+├── 404.html          Custom GitHub Pages error page
+├── sitemap.xml       Search-engine sitemap (update <lastmod> when pages change)
+├── robots.txt        Crawler rules + sitemap pointer
+├── css/style.css     All styles (no frameworks, no build tools)
+├── js/main.js        Active nav link, mobile menu, footer year
+└── img/              Site logo, institution logos, photo
 ```
 
-## Deploy on GitHub Pages
+## Development
 
-1. Create a GitHub repo named `<your-username>.github.io` (or any name for a project page)
-2. Push this folder's contents to the `main` branch:
+No build step. Open the HTML files directly, or run `python3 -m http.server` from the project root and visit http://localhost:8000.
 
-```bash
-cd website/
-git init
-git add .
-git commit -m "Initial website"
-git remote add origin https://github.com/<your-username>/<your-username>.github.io.git
-git push -u origin main
-```
+## Deployment
 
-3. Go to **Settings → Pages** in your GitHub repo and set Source to `main` branch, root `/`
-4. Your site will be live at `https://<your-username>.github.io` within a few minutes
+GitHub Pages from the `main` branch, root `/`. Push to `main` and the site updates within a minute or two. The `.nojekyll` file disables Jekyll processing — keep it.
 
-## Customisation
+## SEO
 
-### Add your photo
-Replace the placeholder emoji `👤` in `index.html` and `about.html` with an `<img>` tag:
-```html
-<img src="img/tony.jpg" alt="Tony Di Fabbio" class="hero-photo">
-```
-Drop your photo as `img/tony.jpg`.
+- Every page carries a canonical URL, Open Graph/Twitter tags and JSON-LD structured data (`Person` on the landing page, `ProfilePage` on the bio, `ResearchProject` on the project page).
+- `sitemap.xml` and `robots.txt` are in place — update the `<lastmod>` dates when a page changes, and re-submit the sitemap in Google Search Console after significant changes.
+- For the site to rank for "Tony Di Fabbio", keep the site linked from ORCID, Google Scholar, LinkedIn, ResearchGate and the GitHub profile.
 
-### Add a profile photo to About page
-Same pattern — replace the `<div class="about-photo">👤</div>` with:
-```html
-<img src="img/tony.jpg" alt="Tony Di Fabbio" class="about-photo" style="object-fit:cover;">
-```
+## Logo policy
 
-### Update DOI links
-In `research.html`, each `<div class="pub-links">` is ready for DOI/PDF links — just add:
-```html
-<a href="https://doi.org/..." class="pub-link" target="_blank">DOI</a>
-<a href="..." class="pub-link" target="_blank">PDF</a>
-```
+Only two institutional logos may be displayed: **MSCA / EU** (`img/logoMSCA.png`) and **DIMEAS — Politecnico di Torino** (`img/logoDIMEAS.jpg`). There is **no permission** to use the University of Melbourne or ONERA logos — those partners appear as text wordmarks (`.inst-wordmark`) on the landing page. Do not re-add their image logos.
 
-### Add news posts
-In `news.html`, copy a `.news-post` block and fill in date, badge, title, and text.
+## EU acknowledgment
 
-### EU acknowledgment
-The EU banner and footer acknowledgment texts are required by MSCA grant conditions.
-Do not remove them.
-
-## Technical Notes
-
-- Pure HTML/CSS/JS — no build tools, no npm, no frameworks
-- No external CSS frameworks (no Bootstrap, no Tailwind)
-- No external fonts (uses system font stack)
-- Fully mobile responsive
-- GitHub Pages compatible out of the box (no Jekyll config needed — add `.nojekyll` file if needed)
-
-## To add `.nojekyll` (prevents Jekyll processing)
-
-```bash
-touch .nojekyll
-```
+The EU banner at the top of every page and the EU/MSCA attribution in every footer are required by the MSCA grant conditions. Do not remove them.
 
 ---
 
-**Funded by the European Union — MSCA Grant Agreement No. 101206371**  
+**Funded by the European Union — MSCA Grant Agreement No. 101206371**
 Views and opinions expressed are those of the author only and do not necessarily reflect those of the European Union or the REA.

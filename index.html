@@ -3,8 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LINERFUN — Tony Di Fabbio</title>
-  <meta name="description" content="LINERFUN — MSCA Global Fellowship by Tony Di Fabbio. Physics-informed acoustic liner research for next-generation aircraft engines. Politecnico di Torino · University of Melbourne · ONERA.">
+  <title>Tony Di Fabbio — Aeroacoustics &amp; CFD Researcher | LINERFUN</title>
+  <meta name="description" content="Official website of Tony Di Fabbio, aerospace engineer and Marie Skłodowska-Curie Global Fellow. LINERFUN develops physics-informed simulations for quieter aircraft engines.">
+  <meta name="author" content="Tony Di Fabbio">
+  <meta name="theme-color" content="#1e3a5f">
+  <link rel="canonical" href="https://difabbiot.github.io/">
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tony Di Fabbio — LINERFUN">
+  <meta property="og:title" content="Tony Di Fabbio — Aeroacoustics &amp; CFD Researcher | LINERFUN">
+  <meta property="og:description" content="Aerospace engineer and MSCA Global Fellow. LINERFUN develops physics-informed simulations for quieter aircraft engines.">
+  <meta property="og:url" content="https://difabbiot.github.io/">
+  <meta property="og:image" content="https://difabbiot.github.io/img/tony.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@tdf_95">
+
+  <!-- Structured data: who I am + this website -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://difabbiot.github.io/#person",
+        "name": "Tony Di Fabbio",
+        "givenName": "Tony",
+        "familyName": "Di Fabbio",
+        "honorificSuffix": "Dr.-Ing.",
+        "jobTitle": "Marie Skłodowska-Curie Global Postdoctoral Fellow",
+        "description": "Aerospace engineer and researcher in aeroacoustics, computational fluid dynamics and machine learning for turbulence modelling.",
+        "url": "https://difabbiot.github.io/",
+        "image": "https://difabbiot.github.io/img/tony.jpg",
+        "email": "mailto:tony.difabbio@polito.it",
+        "worksFor": {
+          "@type": "CollegeOrUniversity",
+          "name": "Politecnico di Torino",
+          "url": "https://www.polito.it/"
+        },
+        "alumniOf": [
+          { "@type": "CollegeOrUniversity", "name": "Universität der Bundeswehr München" },
+          { "@type": "CollegeOrUniversity", "name": "Politecnico di Torino" }
+        ],
+        "knowsAbout": ["Aeroacoustics", "Computational Fluid Dynamics", "Acoustic liners", "Turbulence modelling", "Machine learning", "Aerospace engineering"],
+        "sameAs": [
+          "https://orcid.org/0000-0002-7078-3739",
+          "https://scholar.google.com/citations?user=FGbgU2UAAAAJ",
+          "https://www.linkedin.com/in/tony-di-fabbio/",
+          "https://www.researchgate.net/profile/Tony-Di-Fabbio-3",
+          "https://x.com/tdf_95",
+          "https://www.youtube.com/@tonydifabbio2756"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://difabbiot.github.io/#website",
+        "url": "https://difabbiot.github.io/",
+        "name": "Tony Di Fabbio — LINERFUN",
+        "description": "Personal academic website of Tony Di Fabbio and dissemination hub of the LINERFUN MSCA project (Grant 101206371).",
+        "publisher": { "@id": "https://difabbiot.github.io/#person" },
+        "inLanguage": "en"
+      }
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="css/style.css">
   <style>
     /* ── Landing-only overrides ── */
@@ -57,27 +121,20 @@
       letter-spacing: .01em;
       line-height: 1.3;
     }
-    .inst-msca-badge {
+    /* Text wordmarks for partners whose logos we cannot display */
+    .inst-wordmark {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: .45rem;
-    }
-    .inst-msca-pill {
-      font-size: .78rem;
-      font-weight: 700;
-      color: #003399;
-      background: #eef2ff;
-      border: 1.5px solid #a5b4fc;
+      justify-content: center;
+      height: 42px;
+      max-width: 140px;
+      padding: 0 .75rem;
+      border: 1.5px solid;
       border-radius: 8px;
-      padding: .3rem .7rem;
-      letter-spacing: .02em;
-      white-space: nowrap;
-    }
-    .inst-msca-badge span:last-child {
-      font-size: .67rem;
-      font-weight: 600;
-      color: var(--muted);
+      font-size: .74rem;
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: .01em;
       text-align: center;
     }
 
@@ -92,19 +149,21 @@
 </head>
 <body class="landing-body">
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <!-- EU Banner -->
 <div class="eu-banner">
   Funded by the EU Horizon Europe — Marie Skłodowska-Curie Actions, Grant Agreement No. <strong>101206371</strong>
 </div>
 
 <!-- Centered splash -->
-<main class="landing-main">
+<main class="landing-main" id="main">
   <div class="splash">
 
     <!-- Logo + title -->
-    <img src="img/logo.svg" alt="LINERFUN logo" class="splash-logo">
+    <img src="img/logo.svg" alt="LINERFUN logo" class="splash-logo" width="88" height="88">
     <h1>LINERFUN</h1>
-    <p class="splash-author">Tony Di Fabbio, Dr.-Ing.</p>
+    <h2 class="splash-author">Tony Di Fabbio, Dr.-Ing.</h2>
     <p class="splash-tagline">MSCA Global Postdoctoral Fellow · Aeroacoustics &amp; Computational Fluid Dynamics</p>
 
     <!-- One-paragraph project description -->
@@ -114,35 +173,56 @@
 
     <hr class="splash-divider">
 
-    <!-- Institution logos (real images) -->
+    <!-- Host institutions — only MSCA and DIMEAS logos may be displayed;
+         UoM and ONERA are shown as text wordmarks (no logo permission) -->
     <div class="inst-logos">
 
-      <a href="https://www.dimeas.polito.it/" target="_blank" rel="noopener" class="inst-logo-link" title="Politecnico di Torino — DIMEAS (Italy)">
-        <img src="img/logoDIMEAS.jpg" alt="Politecnico di Torino — DIMEAS">
+      <a href="https://www.dimeas.polito.it/" target="_blank" rel="noopener" class="inst-logo-link" title="DIMEAS — Politecnico di Torino (Italy)">
+        <img src="img/logoDIMEAS.jpg" alt="DIMEAS — Politecnico di Torino" loading="lazy">
         <span>Politecnico di Torino</span>
       </a>
 
-      <a href="https://energy.unimelb.edu.au/" target="_blank" rel="noopener" class="inst-logo-link" title="University of Melbourne — Energy Institute (Australia)">
-        <img src="img/logoUOM.png" alt="University of Melbourne">
-        <span>University of Melbourne</span>
+      <a href="https://energy.unimelb.edu.au/" target="_blank" rel="noopener" class="inst-logo-link" title="University of Melbourne (Australia)">
+        <span class="inst-wordmark inst-uom">University of Melbourne</span>
+        <span>Melbourne, Australia</span>
       </a>
 
       <a href="https://www.onera.fr/en" target="_blank" rel="noopener" class="inst-logo-link" title="ONERA — The French Aerospace Lab (France)">
-        <img src="img/logoONERA.png" alt="ONERA">
-        <span>ONERA, Toulouse</span>
+        <span class="inst-wordmark inst-onera">ONERA</span>
+        <span>Toulouse, France</span>
       </a>
 
       <a href="https://marie-sklodowska-curie-actions.ec.europa.eu" target="_blank" rel="noopener" class="inst-logo-link" title="Marie Skłodowska-Curie Actions — EU Horizon Europe">
-        <img src="img/logoMSCA.png" alt="Marie Skłodowska-Curie Actions">
+        <img src="img/logoMSCA.png" alt="Marie Skłodowska-Curie Actions" loading="lazy">
         <span>EU Horizon Europe · MSCA</span>
       </a>
 
     </div>
 
+    <!-- Key stats strip -->
+    <div class="splash-stats">
+      <div class="splash-stat">
+        <span class="splash-stat-num">3</span>
+        <span class="splash-stat-label">Institutions</span>
+      </div>
+      <div class="splash-stat">
+        <span class="splash-stat-num">36</span>
+        <span class="splash-stat-label">Months</span>
+      </div>
+      <div class="splash-stat">
+        <span class="splash-stat-num">€309K</span>
+        <span class="splash-stat-label">EU Funding</span>
+      </div>
+      <div class="splash-stat">
+        <span class="splash-stat-num">3</span>
+        <span class="splash-stat-label">Continents</span>
+      </div>
+    </div>
+
     <!-- Navigation cards -->
     <nav class="nav-grid" aria-label="Site navigation">
 
-      <a href="project.html" class="nav-card">
+      <a href="project.html" class="nav-card card-project">
         <div class="nav-card-icon icon-project">
           <svg viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/>
@@ -152,7 +232,7 @@
         <div class="nav-card-desc">Objectives, methodology, current status &amp; updates</div>
       </a>
 
-      <a href="about.html" class="nav-card">
+      <a href="about.html" class="nav-card card-bio">
         <div class="nav-card-icon icon-bio">
           <svg viewBox="0 0 24 24" fill="none" stroke="#166534" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
@@ -162,7 +242,7 @@
         <div class="nav-card-desc">Career history, education &amp; CV download</div>
       </a>
 
-      <a href="research.html" class="nav-card">
+      <a href="research.html" class="nav-card card-research">
         <div class="nav-card-icon icon-research">
           <svg viewBox="0 0 24 24" fill="none" stroke="#6b21a8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/>
@@ -172,7 +252,7 @@
         <div class="nav-card-desc">Publications, conferences, awards &amp; funding</div>
       </a>
 
-      <a href="blog.html" class="nav-card">
+      <a href="blog.html" class="nav-card card-blog">
         <div class="nav-card-icon icon-blog">
           <svg viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 4h16v2.5c0 5-3 9-8 11-5-2-8-6-8-11V4z"/><path d="M9 12l2 2 4-4"/>

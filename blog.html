@@ -3,11 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog — Tony Di Fabbio</title>
-  <meta name="description" content="News, updates and outreach posts from Tony Di Fabbio and the LINERFUN MSCA project.">
+  <title>Blog &amp; News — Tony Di Fabbio | LINERFUN</title>
+  <meta name="description" content="News, project updates and science outreach from Tony Di Fabbio and the LINERFUN MSCA project — quieter aircraft engines, fellowship life, publications.">
+  <meta name="author" content="Tony Di Fabbio">
+  <meta name="theme-color" content="#1e3a5f">
+  <link rel="canonical" href="https://difabbiot.github.io/blog.html">
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tony Di Fabbio — LINERFUN">
+  <meta property="og:title" content="Blog &amp; News — Tony Di Fabbio | LINERFUN">
+  <meta property="og:description" content="News, project updates and science outreach from the LINERFUN MSCA project.">
+  <meta property="og:url" content="https://difabbiot.github.io/blog.html">
+  <meta property="og:image" content="https://difabbiot.github.io/img/tony.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@tdf_95">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="eu-banner">
   Funded by the EU Horizon Europe — Marie Skłodowska-Curie Actions, Grant Agreement No. <strong>101206371</strong>
@@ -25,17 +42,20 @@
       <li><a href="research.html">Research</a></li>
       <li><a href="blog.html">Blog</a></li>
     </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </button>
   </div>
 </nav>
 
-<div class="col">
+<main class="col" id="main">
 
   <header class="page-hero">
     <h1>Blog</h1>
     <p>News, project updates &amp; outreach</p>
   </header>
 
-  <main class="section" style="border-bottom:none; padding-bottom:3rem;">
+  <div class="section" style="border-bottom:none; padding-bottom:3rem;">
 
     <!-- PINNED -->
     <article class="post pinned">
@@ -52,6 +72,73 @@
         Time-Domain Impedance Boundary Conditions (piTDIBC) for scale-resolving CFD/CAA.</p>
       </div>
       <a href="project.html" class="post-read-more">Read more about the project →</a>
+    </article>
+
+    <!-- ── NEW POSTS ── -->
+
+    <article class="post">
+      <div class="post-meta">
+        <span class="post-tag tag-msca">MSCA</span>
+        <span class="post-tag tag-news">Project update</span>
+        <span class="post-date">June 2026</span>
+      </div>
+      <h2>LINERFUN is live — what the next three years will look like</h2>
+      <div class="post-body">
+        <p>May 2026. After months of anticipation, LINERFUN is officially underway. I am writing this from my desk at the Politecnico di Torino, where I joined the <a href="https://lining.polito.it" target="_blank" rel="noopener">LINING research group</a> led by Prof. Francesco Avallone. The first meetings, the first whiteboard sessions, the first look at the code I will be working with for the next three years — it already feels like the start of something meaningful.</p>
+        <p>The fellowship has three phases. The first three months in Turin are about getting oriented: understanding the codebase, identifying the right test cases, and setting the technical foundations. From month four, I move to <strong>ONERA in Toulouse</strong>, where the team led by Dr. Estelle Piot will give me access to experimental data and a deep understanding of how acoustic liners are tested in practice.</p>
+        <p>The longest phase — months 8 to 24 — is the outgoing part of the Global Fellowship: I will be at the <strong>University of Melbourne</strong>, embedded in Prof. Richard Sandberg's group, which develops the HiPSTAR simulation code at the core of LINERFUN. Seventeen months in Australia, working on the hardest technical problems of the project.</p>
+        <p>The final year brings me back to Turin to complete the validation, write up results, and work on dissemination. Three continents, three research groups, one coherent scientific programme. I will post regular updates here throughout the project — both on the technical progress and on what it actually feels like to do research across three countries.</p>
+      </div>
+      <a href="project.html" class="post-read-more">Full project overview →</a>
+    </article>
+
+    <article class="post">
+      <div class="post-meta">
+        <span class="post-tag tag-news">Outreach</span>
+        <span class="post-date">June 2026</span>
+      </div>
+      <h2>The sound beneath the roar: why aircraft noise is a public health issue</h2>
+      <div class="post-body">
+        <p>Most people who live near airports know the feeling: a low rumble building into a full-throated roar, then slowly fading. It is a familiar sound, but beneath its familiarity lies a serious public health problem. According to the World Health Organisation, environmental noise is the second-largest environmental health risk in Europe after air pollution.</p>
+        <div class="post-highlight">Around 600 million people in Europe are regularly exposed to traffic and aircraft noise above recommended levels. The WHO estimates that over 12,000 premature deaths per year in Europe are linked to long-term noise exposure, primarily through cardiovascular effects.</div>
+        <p>Aircraft noise disrupts sleep, raises blood pressure, and impairs cognitive performance in children living near airports. It is disproportionately concentrated: the communities most affected are often those with the least power to push back against airport expansion. This is both an engineering problem and a social justice issue.</p>
+        <p>Next-generation Ultra-High Bypass Ratio (UHBR) engines are significantly quieter than their predecessors — but they are quieter because engineers have worked extremely hard, and they need better tools to go further. The ICAO Chapter 14 noise standard, in force since 2017, is the tightest yet, and future targets will be tighter still. Every decibel counts.</p>
+        <p>That is where acoustic liner research fits in. Liners are the thin perforated panels bonded to the inside of an engine nacelle. They absorb sound waves at source. They are passive, lightweight, and elegant — but to design them well, engineers need to be able to simulate how they behave under real operating conditions. Current tools have limitations that LINERFUN is specifically trying to address.</p>
+        <p>Better simulations mean better liners. Better liners mean quieter engines. Quieter engines mean better lives for the millions of people who live under flight paths. This is why I think this research matters.</p>
+      </div>
+      <a href="project.html" class="post-read-more">About the LINERFUN project →</a>
+    </article>
+
+    <article class="post">
+      <div class="post-meta">
+        <span class="post-tag tag-news">Science explainer</span>
+        <span class="post-date">May 2026</span>
+      </div>
+      <h2>Inside a quiet engine: what acoustic liners are and why they are hard to simulate</h2>
+      <div class="post-body">
+        <p>If you have ever flown on a commercial aircraft, you have benefited from acoustic liners without knowing it. They are bonded to the inner walls of the engine nacelle — the large cylindrical housings that contain the fan and turbine — and their job is simple in principle: absorb the sound generated by the engine before it escapes into the air around the aircraft.</p>
+        <p>The structure of a liner is a bit like a thick sheet of bubble wrap, except each "bubble" is a carefully designed resonant cavity. When a sound wave at the right frequency enters one of these cavities, it bounces around inside and the energy is dissipated as heat through friction. By tuning the geometry — cavity depth, neck diameter, face sheet porosity — engineers target the specific frequencies the engine produces most loudly.</p>
+        <div class="post-highlight">The problem is that inside an engine nacelle, a strong airflow is moving over the liner surface at the same time that sound waves are passing through it. This "grazing flow" fundamentally changes how the liner absorbs sound — in ways that are not yet fully understood and that are very difficult to capture in simulation.</div>
+        <p>Current industrial practice relies on simplified models calibrated from experiments under controlled, idealised conditions. These are fast to use but fail in the complex turbulent environments inside real engines. And as engines evolve — UHBR designs are shorter and wider, reducing the liner surface area — every bit of performance matters.</p>
+        <p>LINERFUN's contribution is a new kind of boundary condition — a mathematical interface between the simulation domain and the liner surface — that captures liner physics under flow more accurately by embedding physical constraints directly into the model. The acronym is piTDIBC: physics-informed Time-Domain Impedance Boundary Condition. It is designed to work with the most accurate class of simulation methods, and to be practical enough for real design workflows.</p>
+      </div>
+      <a href="project.html" class="post-read-more">The research approach in detail →</a>
+    </article>
+
+    <article class="post">
+      <div class="post-meta">
+        <span class="post-tag tag-msca">MSCA</span>
+        <span class="post-date">May 2026</span>
+      </div>
+      <h2>What it means to be an MSCA Fellow — Europe investing in research mobility</h2>
+      <div class="post-body">
+        <p>The Marie Skłodowska-Curie Actions — MSCA — are the European Union's flagship programme for researcher training and mobility. Since 1996, they have funded more than 50,000 researchers, produced over 100 Nobel laureates among their alumni, and remain one of the most prestigious and competitive individual research grants in the world. Being selected as an MSCA Fellow and receiving the <strong>Seal of Excellence</strong> is something I am genuinely proud of.</p>
+        <p>What makes MSCA distinctive is its commitment to mobility. A Global Postdoctoral Fellowship requires the researcher to spend a substantial period outside Europe. For LINERFUN that means 17 months at the University of Melbourne. This is not a nice-to-have: the programme is explicitly built on the belief that researchers who cross institutional and national boundaries produce better science and bring something irreplaceable back with them.</p>
+        <div class="post-highlight">MSCA is not just about funding — it is about building a culture where researchers move between countries and between research groups, and where this mobility is valued rather than treated as a disruption to a career.</div>
+        <p>I have already experienced this. My two stays at Melbourne during my PhD shaped how I think about research in ways that staying in Germany could not have. The collaboration with Prof. Sandberg's group that came from those visits is now the technical backbone of LINERFUN. Cross-institutional work is not just philosophically appealing; it is practically powerful.</p>
+        <p>LINERFUN also has a formal dissemination and outreach commitment built into the grant. This blog is one part of that. Science does not happen in a vacuum, and I believe researchers have a responsibility to explain what they are doing and why public investment in it is worthwhile. If you are a student, a fellow researcher, or just someone curious about what a European research fellowship looks like from the inside, I hope these posts are useful. Feel free to <a href="mailto:tony.difabbio@polito.it">get in touch</a>.</p>
+      </div>
+      <a href="project.html" class="post-read-more">About LINERFUN →</a>
     </article>
 
     <article class="post">
@@ -117,8 +204,8 @@
       </div>
     </article>
 
-  </main>
-</div>
+  </div>
+</main>
 
 <footer>
   <div class="footer-inner">
