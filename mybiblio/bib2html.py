@@ -211,6 +211,8 @@ def main(argv):
                 sys.stderr.write(f"note: no '{sec}' markers in {path}; skipped\n")
                 continue
             src = pat.sub(lambda m: f"{m.group(1)}\n{block}\n    {m.group(2)}", src)
+        with open(path, "w", encoding="utf-8") as fh:
+            fh.write(src)
         print(f"wrote regenerated sections into {path}")
         return
     if "--section" in argv:

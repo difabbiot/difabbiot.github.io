@@ -20,43 +20,43 @@ attaching the shareable + published PDFs from `mybiblio/papers/`. Everything is 
 3. **Wizard steps 1–4 (Descrivere).** Most fields auto-fill from the DOI. Fill only the required (*)
    ones still empty:
    - **SDG - Sustainable Development Goals** → always `Not applicable`.
-   - **Referee** → `Sì, ma tipo non specificato` (peer-reviewed).
+   - **Referee / Con Referee** → `Sì, ma tipo non specificato` (peer-reviewed).
+   - **Numero di pagine** (required for `1.1 Articolo in rivista`) → real page count if empty.
    - Publisher / Titolo volume / Titolo convegno / identifiers usually import automatically.
    - Skip every optional field. No EU project for pre-LINERFUN papers.
-4. **Step 5 (Carica) — one row per file:**
-   - **shareable** → Tipologia `2. Post-print / Author's Accepted Manuscript`;
-     Impostazioni di accesso `accesso aperto`; Licenza `Creative commons` → **NC = No**, **ND = No**
-     (⇒ **CC BY-NC-ND 4.0**); Publisher's copyright statement = the publisher entry
-     (e.g. `AIAA preprint/submitted version e/o postprint/Author's Accepted Manuscript`).
-   - **published** → Tipologia `2a Post-print versione editoriale / Version of Record`;
-     Impostazioni di accesso `accesso riservato`; Licenza `Non Pubblico - Accesso privato/ristretto`.
-   - **Open-access papers** (single file, CC BY): Tipologia `Version of Record`, `accesso aperto`,
-     Licenza `Creative commons` → **CC BY** (the real publisher licence).
-   - **Paywalled, publisher PDF only** (no shareable): deposit that file as `accesso riservato` (private).
+   - **Check the author disambiguation** on step 3: Di Fabbio should be green (internal). If the DOI
+     source mis-parsed the name (e.g. `Fabbio, T. Di`), he stays grey/external → disambiguate.
+4. **Step 5 (Carica) — one row per file. Trust the live Unpaywall/Open-Policy panel on the right:**
+   - **`Con licenza: cc-by` + `publishedVersion`** ⇒ the VoR is genuinely OA → deposit the published
+     file **`accesso aperto` · VoR · Creative commons → commercial *Sì*, modification *Sì* (= CC BY)**.
+   - **`OA: closed`** (paywalled, e.g. AIAA) ⇒ **shareable** → `2. Post-print / AAM`, `accesso aperto`,
+     Licenza `Creative commons` → **NC = No, ND = No (= CC BY-NC-ND)**, Publisher copyright statement =
+     the matching publisher; **published** → `Version of Record`, `accesso riservato`, `Non Pubblico`.
+   - ⚠️ **File-upload limit: 10 MB per file** (browser tool). Larger PDFs cannot be attached this way —
+     create the metadata-only draft and attach the PDF manually, or compress the PDF below 10 MB first.
 5. **Save as draft.** Bottom bar → **Annulla/Salva** → green **"Salva in temporaneo. Continuerò il
    lavoro dopo"**. (Never the red *Elimina l'inserimento*.) The item lands in *bozze* with Status **Bozza**.
 
-## Per-paper plan (missing → deposit as draft)
+## Status (2026-07-03) — 6 deposited as Bozza, 7 remaining
 
-| Cite key | DOI | Files | Deposit |
-|---|---|---|---|
-| `scitech22` | 10.2514/6.2022-1204 | shareable + published | **DONE — draft** (open CC BY-NC-ND / private) |
-| `fluids24` | 10.3390/fluids9080191 | 1 (MDPI Gold OA) | open · VoR · **CC BY** |
-| `pof24` | 10.1063/5.0213122 | shareable + published | open CC BY-NC-ND / private |
-| `ast24` | 10.1016/j.ast.2024.108973 | 1 (Elsevier, paywalled) | **private** (no shareable yet) |
-| `aj23` | 10.1017/aer.2023.30 | 1 (Cambridge, paywalled) | **private** (no shareable yet) |
-| `ceas22` | 10.1007/s13272-022-00571-9 | 1 (Springer OA) | open · VoR · **CC BY** |
-| `aiaa-ceas26` | 10.2514/6.2026-3359 | shareable + published | open CC BY-NC-ND / private |
-| `emw25` | — (manual) | 1 | conference; open postprint CC BY-NC-ND |
-| `icas22` | — (manual) | 1 | conference; open postprint CC BY-NC-ND |
-| `tsfp22` | — (manual) | 1 | conference; open postprint CC BY-NC-ND |
-| `dglr20` | — (manual) | 1 | conference; open postprint CC BY-NC-ND |
-| `phd24` | — (manual) | 1 | PhD thesis; open |
-| `msc19` | webthesis 12809 | 1 | PoliTo master's thesis; open |
+| Cite key | DOI | Status / how to deposit |
+|---|---|---|
+| `scitech22` | 10.2514/6.2022-1204 | ✅ **Bozza** — shareable open CC BY-NC-ND + published private |
+| `fluids24` | 10.3390/fluids9080191 | ✅ **Bozza** — open · VoR · CC BY |
+| `ceas22` | 10.1007/s13272-022-00571-9 | ✅ **Bozza** — open · VoR · CC BY |
+| `ast24` | 10.1016/j.ast.2024.108973 | ✅ **Bozza** — open · VoR · **CC BY** (Unpaywall says hybrid OA, *not* private) |
+| `aj23` | 10.1017/aer.2023.30 | ✅ **Bozza** — open · VoR · **CC BY** (Unpaywall says hybrid OA, *not* private) |
+| `pof24` | 10.1063/5.0213122 | ✅ **Bozza** — open · VoR · CC BY. ⚠️ name mis-parsed `Fabbio, T. Di` → **disambiguate author**; 73 MB shareable skipped (>10 MB, redundant) |
+| `emw25` | 10.23919/EuMC65286.2025.11235288 | ⏳ has DOI now — import; single file (4 MB, uploadable) |
+| `icas22` | — (url only) | ⏳ manual entry; file 6 MB uploadable |
+| `tsfp22` | — | ⏳ manual entry; file 4 MB uploadable |
+| `dglr20` | — | ⏳ manual entry; file 2.5 MB uploadable |
+| `aiaa-ceas26` | 10.2514/6.2026-3359 | ⏳ import metadata; **files ~22 MB each > 10 MB** → attach manually (shareable open CC BY-NC-ND / published private) |
+| `phd24` | — | ⏳ manual (PhD thesis); **file 56 MB > 10 MB** → attach manually |
+| `msc19` | webthesis 12809 | ⏳ manual (PoliTo MSc thesis); **file 18 MB > 10 MB** → attach manually |
 
-**Already on IRIS:** `aiaa26` (in approval, by Tony). **Missing PDFs (not depositable yet):**
-`ofw25a`, `ofw25b`, `dglr25`.
+**Already on IRIS:** `aiaa26` (in approval, by Tony). **No PDF yet:** `ofw25a`, `ofw25b`.
 
-> Affiliation note: 2019–2024 works are from the UniBw München era; only deposit on PORTO@IRIS
-> per Tony's instruction (he confirmed depositing his back-catalogue). VoR of paywalled papers is
-> kept *private*; the green-OA `_shareable` is the openly-accessible copy.
+> Key finding: several papers assumed paywalled (`ast24`, `aj23`, `pof24`) are actually **CC BY hybrid
+> OA** per the live Unpaywall panel — always trust that panel over the static guess. AIAA papers
+> (`scitech22`, `aiaa26`, `aiaa-ceas26`) are the genuinely paywalled ones (shareable open / VoR private).

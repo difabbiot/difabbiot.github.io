@@ -50,8 +50,7 @@ The BibTeX cite key (`ceas22`, `icas22`, …) is unchanged; it stays the entry k
 | `aiaa-ceas26` | 32nd AIAA/CEAS Aeroacoustics, 2026 | paywalled | `Bres_2026_gpu-les-cavity-flows_shareable.pdf` · `…_published.pdf` |
 | `ofw25a` | 20th OpenFOAM Workshop, 2025 | — | — **missing** → `Segalerba_2025_opensource-turbulence-model.pdf` |
 | `ofw25b` | 20th OpenFOAM Workshop, 2025 | — | — **missing** → `Rossano_2025_openfoam-verification-validation.pdf` |
-| `emw25` | European Microwave Week, 2025 | — | `Zampa_2025_hypersonic-blackout-mitigation.pdf` |
-| `dglr25` | DGLR, Augsburg, 2025 | — | — **missing** → `DiFabbio_2025_ml-turbulence-opensource.pdf` |
+| `emw25` | 55th European Microwave Conf. (EuMC), 2025 | IEEE | `Zampa_2025_hypersonic-blackout-mitigation.pdf` |
 | `scitech22` | AIAA SciTech Forum, 2022 | paywalled | `DiFabbio_2022_delta-wing-flow-pattern_shareable.pdf` · `…_published.pdf` |
 | `icas22` | ICAS Congress, Stockholm, 2022 | — | `DiFabbio_2022_leading-edge-vortices-sas.pdf` |
 | `tsfp22` | TSFP12, Osaka, 2022 | — | `DiFabbio_2022_reynolds-stress-vortex-breakdown.pdf` |
@@ -59,7 +58,7 @@ The BibTeX cite key (`ceas22`, `icas22`, …) is unchanged; it stays the entry k
 | `phd24` | PhD, UniBw München, 2024 | — | `DiFabbio_2024_phd-turbulence-vortical-swept-edges.pdf` |
 | `msc19` | MSc, Politecnico di Torino, 2019 | — | `DiFabbio_2019_msc-rocket-combustor.pdf` |
 
-**14 / 17 entries have a local PDF. Missing:** `ofw25a`, `ofw25b`, `dglr25`
+**14 / 16 entries have a local PDF. Missing:** `ofw25a`, `ofw25b`
 (suggested filenames in the table above).
 
 For paywalled entries that only have the publisher typeset PDF (`ast24`, `aj23`), add a
