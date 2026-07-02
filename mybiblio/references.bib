@@ -1,0 +1,215 @@
+% ============================================================================
+%  references.bib  —  MASTER BIBLIOGRAPHY (single source of truth)
+%  Tony Di Fabbio · LINERFUN · https://difabbiot.github.io/
+% ============================================================================
+%
+%  This file drives the publication list on research.html.
+%  Regenerate the HTML with:   python3 mybiblio/bib2html.py
+%
+%  CONVENTIONS (read before editing — bib2html.py relies on them)
+%  ---------------------------------------------------------------------------
+%  1. CITE KEY = HTML ANCHOR.  Entry key `fluids24`  ->  <div class="pub"
+%     id="pub-fluids24">.  Keep keys stable: the expertise cards on
+%     research.html deep-link to these #pub-... anchors. Renaming a key
+%     breaks those links.
+%
+%  2. ENTRY TYPE -> SECTION.
+%        @article                      -> "Journal Articles"
+%        @inproceedings / @conference  -> "Conference Papers"
+%        @phdthesis / @mastersthesis   -> "Theses"
+%     Order inside each section = order in this file (newest first).
+%     A conference entry with `presentation = {true}` is routed instead to
+%     "Conference Presentations" — a talk given WITHOUT a proceedings paper.
+%
+%  3. AUTHORS.  Write "Last, F." separated by " and ", e.g.
+%        author = {Di Fabbio, T. and Tangermann, E.}
+%     bib2html renders "F. Last" and auto-bolds any "Di Fabbio" entry.
+%
+%  4. VENUE STRING is built automatically:
+%        @article  ->  {journal}, {year}[, {volume}({number})]
+%        @*proc    ->  {booktitle}, {year}        (put the city IN booktitle)
+%        @*thesis  ->  {PhD thesis|Master's thesis} · {school} · {year} · {note}
+%
+%  5. LINKS (optional, both rendered as buttons under the entry):
+%        doi   = {10.xxxx/yyyy}     -> "doi: ..." link to https://doi.org/...
+%        oaurl = {https://...}      -> "PDF" button (free/open-access full text)
+%        pdf   = {papers/KEY.pdf}   -> "PDF" button to a self-hosted copy
+%     PAPER HOSTING: drop self-archived PDFs in mybiblio/papers/ (see the
+%     README there). For paywalled papers, host the ACCEPTED MANUSCRIPT
+%     (author version, no publisher banner/typesetting) and point `pdf` at it.
+%
+%  6. `contribution = {...}` is a private CV note. Not rendered by default.
+% ============================================================================
+
+
+% ======================== PEER-REVIEWED JOURNAL ARTICLES ====================
+
+@article{aiaa26,
+  author       = {Kotzlowski, D. and Di Fabbio, T. and Tangermann, E. and Klein, M. and Fang, Y. and Sandberg, R. D.},
+  title        = {Enhancing One-Equation Turbulence Models for Delta Wings by Gene Expression Programming},
+  journal      = {AIAA Journal},
+  year         = {2026},
+  volume       = {64},
+  pages        = {2189--2205},
+  doi          = {10.2514/1.J065906},
+  contribution = {Designed symbolic GEP corrections introducing nonlinear stress--strain terms and a revised turbulence production term; trained on a single delta wing and validated on double and triple delta configurations, enabling an interpretable and robust modelling workflow.},
+  % NOTE: published title differs from the draft title used on the site/CV
+  %       ("...for delta wing flows by gene expression programming"). Co-author
+  %       surname is "Kotzlowski" on the AIAA record (CV/site read "Kotlzowski").
+}
+
+@article{fluids24,
+  author       = {Di Fabbio, T. and Tangermann, E. and Klein, M. and Fang, Y. and Sandberg, R. D.},
+  title        = {Strategies for Enhancing One-Equation Turbulence Model Predictions Using Gene-Expression Programming},
+  journal      = {Fluids},
+  year         = {2024},
+  volume       = {9},
+  number       = {8},
+  articleno    = {191},
+  doi          = {10.3390/fluids9080191},
+  oaurl        = {https://www.mdpi.com/2311-5521/9/8/191},
+  contribution = {Developed two GEP pathways extending the Boussinesq assumption and constructing a new one-equation closure using solver-in-the-loop training for deployable wall-bounded turbulence models.},
+  % Gold open access (MDPI) — full text freely available, link above.
+}
+
+@article{pof24,
+  author       = {Rajkumar, K. and Di Fabbio, T. and Tangermann, E. and Klein, M.},
+  title        = {Physical aspects of vortex–shock dynamics in delta wing configurations},
+  journal      = {Physics of Fluids},
+  year         = {2024},
+  volume       = {36},
+  number       = {6},
+  doi          = {10.1063/5.0213122},
+  contribution = {Quantified shock--vortex interaction mechanisms across double and triple delta planforms through CFD and enstrophy transport analysis, identifying geometry- and incidence-driven buffet sensitivity.},
+}
+
+@article{ast24,
+  author       = {Di Fabbio, T. and Rajkumar, K. and Tangermann, E. and Klein, M.},
+  title        = {Towards the understanding of vortex breakdown for improved RANS turbulence modelling},
+  journal      = {Aerospace Science and Technology},
+  year         = {2024},
+  volume       = {146},
+  doi          = {10.1016/j.ast.2024.108973},
+  contribution = {Diagnosed physical and modelling causes of one-equation RANS failures in transonic sideslip and proposed a validated modification improving stability and accuracy.},
+}
+
+@article{aj23,
+  author       = {Di Fabbio, T. and Tangermann, E. and Klein, M.},
+  title        = {Analysis of the vortex-dominated flow field over a delta wing at transonic speed},
+  journal      = {The Aeronautical Journal},
+  year         = {2023},
+  volume       = {127},
+  number       = {1317},
+  pages        = {1851--1868},
+  doi          = {10.1017/aer.2023.30},
+  contribution = {Produced high-fidelity datasets resolving vortex systems and shocks; analysed eddy viscosity and Reynolds stresses in vortex formation and maintenance.},
+}
+
+@article{ceas22,
+  author       = {Di Fabbio, T. and Tangermann, E. and Klein, M.},
+  title        = {Investigation of transonic aerodynamics on a triple-delta wing in sideslip conditions},
+  journal      = {CEAS Aeronautical Journal},
+  year         = {2022},
+  volume       = {13},
+  number       = {2},
+  pages        = {453--470},
+  doi          = {10.1007/s13272-022-00571-9},
+  contribution = {Demonstrated RANS limitations and advantages of high-fidelity approaches for predicting vortex and shock interactions, improving aerodynamic load predictions.},
+}
+
+
+% ======================= CONFERENCE PAPERS (peer-reviewed) ==================
+
+@inproceedings{aiaa-ceas26,
+  author    = {Bres, G. A. and Ivey, C. B. and Heidt, L. and Wang, K. and Bose, S. T. and Hottois, R. and Guerrero, J. and Di Fabbio, T.},
+  title     = {GPU-Accelerated Large-Eddy Simulations of High-Speed Cavity Flows With Dynamic Doors Deployment},
+  booktitle = {32nd AIAA/CEAS Aeroacoustics Conference},
+  year      = {2026},
+  pages     = {3359},
+  doi       = {10.2514/6.2026-3359},   % AIAA paper 2026-3359 (standard AIAA DOI scheme; confirm it resolves)
+}
+
+@inproceedings{emw25,
+  author    = {Zampa, G. and Di Fabbio, T. and Segalerba, E. and Guerrero, J.},
+  title     = {Optimization of Hypersonic Re-Entry Vehicle Aerodynamics for Communication Blackout Mitigation},
+  booktitle = {European Microwave Week, Utrecht},
+  year      = {2025},
+}
+
+@inproceedings{dglr25,
+  author    = {Di Fabbio, T. and Segalerba, E. and Tangermann, E. and Klein, M.},
+  title     = {Towards a machine learning-augmented one-equation turbulence model for external aerodynamics in an open-source framework},
+  booktitle = {DGLR Conference, Augsburg},
+  year      = {2025},
+}
+
+@inproceedings{scitech22,
+  author    = {Di Fabbio, T. and Tangermann, E. and Klein, M.},
+  title     = {Flow pattern analysis on a delta wing at transonic speed},
+  booktitle = {AIAA SciTech Forum, San Diego},
+  year      = {2022},
+  doi       = {10.2514/6.2022-1204},
+}
+
+@inproceedings{icas22,
+  author    = {Di Fabbio, T. and Tangermann, E. and Klein, M.},
+  title     = {Investigation of leading-edge vortices on a triple-delta-wing configuration using scale-adaptive simulation},
+  booktitle = {ICAS Congress, Stockholm},
+  year      = {2022},
+}
+
+@inproceedings{tsfp22,
+  author    = {Di Fabbio, T. and Tangermann, E. and Klein, M.},
+  title     = {Investigation of Reynolds stresses prior to vortex breakdown on a triple-delta wing at transonic condition},
+  booktitle = {TSFP12, Osaka},
+  year      = {2022},
+}
+
+@inproceedings{dglr20,
+  author    = {Di Fabbio, T. and Tangermann, E. and Klein, M. and Ketterl, S. and Winkler, A.},
+  title     = {Comparative scale-resolving and RANS simulations of a delta wing configuration},
+  booktitle = {DGLR Conference, Bonn},
+  year      = {2020},
+  doi       = {10.25967/530052},
+}
+
+
+% ============ CONFERENCE PRESENTATIONS (talk given, no proceedings paper) ====
+%  These carry `presentation = {true}` so bib2html routes them to the
+%  "Conference Presentations" section instead of "Conference Papers".
+
+@inproceedings{ofw25a,
+  author       = {Segalerba, E. and Di Fabbio, T. and Rossano, V. and Guerrero, J.},
+  title        = {Towards a generalized open-source turbulence model for external aerodynamics},
+  booktitle    = {20th OpenFOAM Workshop, Vienna},
+  year         = {2025},
+  presentation = {true},
+}
+
+@inproceedings{ofw25b,
+  author       = {Rossano, V. and Di Fabbio, T. and Segalerba, E. and Guerrero, J.},
+  title        = {Verification and Validation of OpenFOAM for High-Speed Aerodynamics},
+  booktitle    = {20th OpenFOAM Workshop, Vienna},
+  year         = {2025},
+  presentation = {true},
+}
+
+
+% ================================== THESES ==================================
+
+@phdthesis{phd24,
+  author = {Di Fabbio, Tony},
+  title  = {Efficient Turbulence Modelling for Vortical Flows from Swept Leading Edges},
+  school = {Universität der Bundeswehr München},
+  year   = {2024},
+  note   = {Summa cum Laude},
+}
+
+@mastersthesis{msc19,
+  author = {Di Fabbio, Tony},
+  title  = {Numerical simulation of a sub-scale rocket combustor},
+  school = {Politecnico di Torino},
+  year   = {2019},
+  note   = {Grade 110/110 cum laude},
+  url    = {http://webthesis.biblio.polito.it/id/eprint/12809},
+}

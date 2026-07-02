@@ -6,6 +6,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Personal academic website and EU MSCA dissemination hub for the LINERFUN project (Grant 101206371). Pure static site — no build tools, no npm, no frameworks, no external CSS libraries. Live at https://difabbiot.github.io/.
 
+## Content operations
+
+For recurring content jobs — adding a blog post, a publication, or an award, then publishing — follow **`COWORK.md`**. The bibliography is managed as BibTeX: `mybiblio/references.bib` is the single source of truth, and `python3 mybiblio/bib2html.py` regenerates the publication lists in `research.html` (do not hand-edit those `.pub` blocks). Self-hosted paper PDFs live in `mybiblio/papers/`.
+
 ## Development
 
 Open any HTML file directly in a browser — there is no build step or dev server. For live reload, use `python3 -m http.server` from the project root, then visit `http://localhost:8000`.

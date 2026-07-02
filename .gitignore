@@ -2,3 +2,6 @@
 Thumbs.db
 *.swp
 *.swo
+err.log
+__pycache__/
+mybiblio/papers/
