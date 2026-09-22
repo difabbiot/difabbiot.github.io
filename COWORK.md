@@ -15,6 +15,9 @@ No build step. Edit HTML/`.bib`, commit, push — GitHub Pages redeploys in ~1 m
 | `mybiblio/references.bib` | **master bibliography (source of truth)** | add/edit a publication |
 | `mybiblio/papers/` | self-hosted PDFs | drop an accepted-manuscript PDF |
 | `sitemap.xml` | SEO sitemap | bump `<lastmod>` after any change |
+| `mybiblio/sync_profiles.py` | **pipeline di sincronizzazione profili** | eseguirlo dopo ogni nuova voce (§2-bis) |
+| `mybiblio/profile_state.json` | copertura per piattaforma | aggiornarlo dopo ogni caricamento manuale |
+| `mybiblio/exports/` | materiale generato per ORCID/RG/Scholar/IRIS/blog | leggerlo, non modificarlo a mano |
 
 ---
 
@@ -142,6 +145,58 @@ feature a new paper, add a line inside the relevant card's `.exp-pubs`:
 ```html
 <a href="#pub-KEY">Short title — <em>Venue</em>, Year</a>
 ```
+
+---
+
+## 2-bis · Propagare una pubblicazione su TUTTI i profili
+
+Dopo aver aggiunto la voce a `references.bib` (§2 step 1), un solo comando
+allinea sito, sitemap e tutti i profili esterni:
+
+```bash
+python3 mybiblio/sync_profiles.py --key NUOVAKEY
+```
+
+Cosa fa, in ordine:
+
+| # | Passo | Automatico? |
+|---|---|---|
+| 1 | Verifica il DOI contro Crossref, poi DataCite: titolo, autori, volume, numero, pagine, anno | sì |
+| 2 | Rigenera `research.html` (tutte e 4 le sezioni) e aggiorna `sitemap.xml` | sì |
+| 3 | Legge l'API pubblica ORCID e scrive le voci mancanti in `exports/orcid_import.bib` | lettura sì, scrittura no |
+| 4 | Genera `exports/profile_cards.md` — metadati pronti per ResearchGate e Scholar | no (niente API di scrittura) |
+| 5 | Genera `exports/iris_queue.md` — checklist di deposito per PORTO@IRIS | no (sessione autenticata) |
+| 6 | Genera `exports/blog_draft.html` — il `.post` per la disseminazione MSCA | testo da completare |
+| 7 | Aggiorna `profile_state.json` e `exports/SYNC_STATUS.md` (matrice di copertura) | sì |
+
+Opzioni: `--check` (dry run), `--no-net` (salta Crossref/ORCID), `--key` ripetibile.
+
+### I passi manuali, nell'ordine giusto
+
+1. **ORCID** → Works → Add → *Add BibTeX* → `mybiblio/exports/orcid_import.bib`.
+2. **ResearchGate** → Add research, seguendo `exports/profile_cards.md`.
+   Profilo canonico: `researchgate.net/profile/Tony-Di-Fabbio-4`.
+3. **Google Scholar** → non fare nulla: si aggiorna da solo. Inserimento
+   manuale solo se dopo ~4 settimane la voce non compare.
+4. **IRIS PoliTo** → `exports/iris_queue.md` + `IRIS_DEPOSIT_PLAYBOOK.md`.
+   Accedi tu; ogni voce si ferma alla **Bozza**, l'invio lo fai tu.
+5. Aggiorna `mybiblio/profile_state.json` con quello che hai caricato, così la
+   matrice di copertura resta veritiera.
+
+### Quale PDF si può caricare dove
+
+`references.bib` porta tre campi non renderizzati che codificano la policy di
+`mybiblio/papers/README.md`:
+
+- `aam = {papers/...}` — accepted manuscript / copia autore
+- `vor = {papers/...}` — versione editoriale (version of record)
+- `share = {aam|vor|none}` — **quale delle due può essere diffusa apertamente**
+
+`share = none` significa che in archivio c'è solo il typeset editoriale di un
+lavoro paywalled: non va caricato da nessuna parte. `bib2html.py` ignora questi
+campi, quindi non compare nessun pulsante di download sul sito pubblico — resta
+valida la policy "i full text stanno su IRIS" (vedi Guardrails).
+
 
 ---
 

@@ -38,6 +38,11 @@ def esc(s):
     return _html.escape(s, quote=False)
 
 
+def attr(s):
+    # URLs go into href="..." — & must be escaped or the HTML is invalid
+    return _html.escape(s, quote=True)
+
+
 # entry type -> page section
 SECTION_OF = {
     "article": "journal",
@@ -154,8 +159,9 @@ def link_rows(f, c):
                     f'target="_blank" rel="noopener">doi: {d}</a></div>')
     elif f.get("url"):
         u = f["url"]
-        disp = esc(re.sub(r"^https?://", "", u).rstrip("/"))
-        rows.append(f'{c}<div class="pub-doi"><a href="{u}" '
+        # display: drop the scheme and any query/fragment, keep it readable
+        disp = esc(re.split(r"[?#]", re.sub(r"^https?://", "", u))[0].rstrip("/"))
+        rows.append(f'{c}<div class="pub-doi"><a href="{attr(u)}" '
                     f'target="_blank" rel="noopener">{disp}</a></div>')
     href = None
     if f.get("pdf") and os.path.exists(os.path.join(HERE, f["pdf"])):
@@ -163,7 +169,7 @@ def link_rows(f, c):
     if not href and f.get("oaurl"):
         href = f["oaurl"]
     if href:
-        rows.append(f'{c}<div class="pub-links"><a class="pub-link" href="{href}" '
+        rows.append(f'{c}<div class="pub-links"><a class="pub-link" href="{attr(href)}" '
                     f'target="_blank" rel="noopener">PDF</a></div>')
     return rows
 

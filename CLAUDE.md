@@ -47,3 +47,16 @@ Only two institutional logos may be displayed: **MSCA** (`img/logoMSCA.png`) and
 ## EU acknowledgment requirement
 
 The `.eu-banner` at the top of every page and the EU/MSCA attribution in every footer are **legally required** by the MSCA grant conditions. Do not remove or substantially alter them.
+
+## Profile synchronisation
+
+`references.bib` feeds more than the website. `python3 mybiblio/sync_profiles.py`
+verifies every DOI against Crossref/DataCite, regenerates `research.html` and
+`sitemap.xml`, reads the public ORCID record to find gaps, and emits
+ready-to-paste material for ResearchGate, Google Scholar, PORTO@IRIS and the
+MSCA blog under `mybiblio/exports/`. Per-platform coverage is tracked in
+`mybiblio/profile_state.json`. Full procedure: `COWORK.md` §2-bis.
+
+ORCID, ResearchGate and IRIS have no usable write API for this account, so the
+last step is always manual and always performed in Tony's own authenticated
+session — never enter his credentials.

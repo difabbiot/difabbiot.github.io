@@ -75,7 +75,7 @@
     /* Progress bar with 4 phase segments */
     .phase-bar {
       display: grid;
-      grid-template-columns: 3fr 4fr 17fr 12fr;
+      grid-template-columns: 3fr 5fr 16fr 12fr;
       gap: 3px;
       height: 10px;
       border-radius: 6px;
@@ -96,7 +96,7 @@
 
     .phase-labels {
       display: grid;
-      grid-template-columns: 3fr 4fr 17fr 12fr;
+      grid-template-columns: 3fr 5fr 16fr 12fr;
       gap: 3px;
       margin-bottom: 1rem;
     }
@@ -195,7 +195,7 @@
         <span class="status-month" id="status-month">Month 1 of 36 · Politecnico di Torino</span>
       </div>
 
-      <!-- Phase bar: M1-3 POLITO | M4-7 ONERA | M8-24 UOM | M25-36 POLITO -->
+      <!-- Phase bar: M1-3 POLITO | M4-8 ONERA | M9-24 UOM | M25-36 POLITO -->
       <div class="phase-bar" id="phase-bar">
         <div class="phase-seg phase-polito-1"><div class="phase-progress" id="prog-1"></div></div>
         <div class="phase-seg phase-onera"><div class="phase-progress" id="prog-2"></div></div>
@@ -205,15 +205,15 @@
 
       <div class="phase-labels">
         <div class="phase-label"><strong style="color:#2563eb;">POLITO</strong>M1–3</div>
-        <div class="phase-label"><strong style="color:#c1121f;">ONERA</strong>M4–7</div>
-        <div class="phase-label"><strong style="color:#00285e;">Melbourne</strong>M8–24</div>
+        <div class="phase-label"><strong style="color:#c1121f;">ONERA</strong>M4–8</div>
+        <div class="phase-label"><strong style="color:#00285e;">Melbourne</strong>M9–24</div>
         <div class="phase-label"><strong style="color:#2563eb;">POLITO</strong>M25–36</div>
       </div>
 
-      <div class="status-pills">
+      <div class="status-pills" id="status-pills">
         <span class="status-pill pill-active"><span class="pill-dot"></span>Active — M1</span>
-        <span class="status-pill pill-next">ONERA secondment — from M4</span>
-        <span class="status-pill pill-next">Melbourne outgoing phase — from M8</span>
+        <span class="status-pill pill-next">ONERA secondment — M4–M8</span>
+        <span class="status-pill pill-next">Melbourne outgoing phase — from M9</span>
       </div>
     </div>
   </div>
@@ -278,14 +278,14 @@
         </div>
       </li>
       <li class="tl-item">
-        <div class="tl-date">Secondment<br>M4–7<br><span style="color:#c1121f;font-weight:700;">Toulouse, France</span></div>
+        <div class="tl-date">Secondment<br>M4–8<br><span style="color:#c1121f;font-weight:700;">Toulouse, France</span></div>
         <div class="tl-body">
           <h3>ONERA — The French Aerospace Lab</h3>
           <p>France's national aerospace research centre, founded in 1946. ONERA's Branch B2A in Toulouse specialises in the experimental characterisation of acoustic liners and their modelling. The team offers access to a dedicated wind tunnel for aeroacoustic testing, where LINERFUN will contribute to a joint experimental campaign. Supervisor: Dr. Estelle Piot.</p>
         </div>
       </li>
       <li class="tl-item">
-        <div class="tl-date">Outgoing host<br>M8–24<br><span style="color:#00285e;font-weight:700;">Melbourne, Australia</span></div>
+        <div class="tl-date">Outgoing host<br>M9–24<br><span style="color:#00285e;font-weight:700;">Melbourne, Australia</span></div>
         <div class="tl-body">
           <h3>University of Melbourne</h3>
           <p>Ranked 12th globally (QS), the <a href="https://energy.unimelb.edu.au/" target="_blank" rel="noopener">Energy Institute</a>'s Computational Mechanics group leads the development of HiPSTAR — a high-performance simulation code for turbulent flows and aeroacoustics, which is the primary tool used in LINERFUN. The group also develops the machine learning framework EVE3 used for data-driven model enhancement. Supervisor: Prof. Richard Sandberg.</p>
@@ -320,11 +320,11 @@
   const diff  = (now.getFullYear() - start.getFullYear()) * 12 + (now.getMonth() - start.getMonth());
   const m     = Math.max(1, Math.min(36, diff + 1));
 
-  // Phase boundaries: M1-3 POLITO, M4-7 ONERA, M8-24 UOM, M25-36 POLITO
+  // Phase boundaries: M1-3 POLITO, M4-8 ONERA, M9-24 UOM, M25-36 POLITO
   const phases = [
     { start: 1,  end: 3,  label: 'Politecnico di Torino' },
-    { start: 4,  end: 7,  label: 'ONERA, Toulouse'       },
-    { start: 8,  end: 24, label: 'University of Melbourne'},
+    { start: 4,  end: 8,  label: 'ONERA, Toulouse'       },
+    { start: 9,  end: 24, label: 'University of Melbourne'},
     { start: 25, end: 36, label: 'Politecnico di Torino' },
   ];
 
@@ -343,6 +343,22 @@
       el.style.width = pct + '%';
     }
   });
+
+  // Status pills reflect the live phase rather than fixed text
+  const pillWrap = document.getElementById('status-pills');
+  if (pillWrap) {
+    const shortLabel = { 1: 'Politecnico di Torino', 2: 'ONERA secondment', 3: 'Melbourne outgoing phase', 4: 'Return phase \u2014 Politecnico di Torino' };
+    pillWrap.innerHTML = phases.map((p, i) => {
+      const name = shortLabel[i + 1];
+      if (m >= p.start && m <= p.end) {
+        return `<span class="status-pill pill-active"><span class="pill-dot"></span>Active \u2014 ${name} (M${p.start}\u2013M${p.end})</span>`;
+      }
+      if (m > p.end) {
+        return `<span class="status-pill pill-next">${name} \u2014 completed (M${p.start}\u2013M${p.end})</span>`;
+      }
+      return `<span class="status-pill pill-next">${name} \u2014 from M${p.start}</span>`;
+    }).join('');
+  }
 </script>
 </body>
 </html>

@@ -1,0 +1,119 @@
+{
+  "_comment": "Copertura per piattaforma. website/orcid sono verificati automaticamente a ogni run; scholar/researchgate/iris vanno aggiornati a mano dopo il caricamento. Valori: true | false | \"draft\" (solo IRIS). \"skip\" = esclusa di proposito da quella piattaforma (es. talk senza proceedings paper).",
+  "_audited": "2026-09-21",
+  "last_sync": "2026-09-21",
+  "entries": {
+    "aiaa26": {
+      "website": true,
+      "orcid": true,
+      "scholar": true,
+      "researchgate": true,
+      "iris": true
+    },
+    "fluids24": {
+      "website": true,
+      "orcid": true,
+      "scholar": true,
+      "researchgate": true,
+      "iris": true
+    },
+    "pof24": {
+      "website": true,
+      "orcid": true,
+      "scholar": true,
+      "researchgate": true,
+      "iris": true
+    },
+    "ast24": {
+      "website": true,
+      "orcid": true,
+      "scholar": true,
+      "researchgate": true,
+      "iris": true
+    },
+    "aj23": {
+      "website": true,
+      "orcid": true,
+      "scholar": true,
+      "researchgate": true,
+      "iris": true
+    },
+    "ceas22": {
+      "website": true,
+      "orcid": true,
+      "scholar": true,
+      "researchgate": true,
+      "iris": true
+    },
+    "aiaa-ceas26": {
+      "website": true,
+      "orcid": true,
+      "scholar": true,
+      "researchgate": true,
+      "iris": true
+    },
+    "emw25": {
+      "website": true,
+      "orcid": true,
+      "scholar": true,
+      "researchgate": true,
+      "iris": true
+    },
+    "scitech22": {
+      "website": true,
+      "orcid": true,
+      "scholar": true,
+      "researchgate": true,
+      "iris": true
+    },
+    "icas22": {
+      "website": true,
+      "orcid": true,
+      "scholar": true,
+      "researchgate": true,
+      "iris": true
+    },
+    "tsfp22": {
+      "website": true,
+      "orcid": true,
+      "scholar": true,
+      "researchgate": true,
+      "iris": true
+    },
+    "dglr20": {
+      "website": true,
+      "orcid": true,
+      "scholar": true,
+      "researchgate": true,
+      "iris": true
+    },
+    "ofw25a": {
+      "website": true,
+      "orcid": "skip",
+      "scholar": "skip",
+      "researchgate": "skip",
+      "iris": "skip"
+    },
+    "ofw25b": {
+      "website": true,
+      "orcid": "skip",
+      "scholar": "skip",
+      "researchgate": "skip",
+      "iris": "skip"
+    },
+    "phd24": {
+      "website": true,
+      "orcid": true,
+      "scholar": true,
+      "researchgate": true,
+      "iris": "skip"
+    },
+    "msc19": {
+      "website": true,
+      "orcid": true,
+      "scholar": true,
+      "researchgate": true,
+      "iris": "skip"
+    }
+  }
+}
